@@ -1,9 +1,10 @@
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const commonjs = require('@rollup/plugin-commonjs')
+const settings = require('./package.json').settings
 
 module.exports = [
   {
-    input: 'app/_assets/javascripts/application.js',
+    input: 'app/assets/javascripts/application.js',
     output: {
       file: 'public/assets/javascripts/application.js',
       format: 'iife'

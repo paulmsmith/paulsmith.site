@@ -40,11 +40,8 @@ module.exports = function (eleventyConfig) {
       './assets/javascripts/netlify-cms.js'
   })
 
-  eleventyConfig.addWatchTarget('./app/_assets/')
-  // eleventyConfig.addWatchTarget('./app/_assets/images/')
-  // eleventyConfig.addWatchTarget('./app/_assets/stylesheets/')
-  // eleventyConfig.addWatchTarget('./app/_assets/javascripts/')
-  eleventyConfig.addWatchTarget('./app/_components/')
+  eleventyConfig.addWatchTarget('./app/assets/')
+  eleventyConfig.addWatchTarget('./app/components/')
 
   // Config
   return {
@@ -55,8 +52,8 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'content',
       output: 'public',
-      layouts: '../app/_layouts',
-      includes: '../app/_components'
+      layouts: '../app/layouts',
+      includes: '../app/components'
     },
     templateFormats: ['njk', 'md'],
     passthroughFileCopy: true
