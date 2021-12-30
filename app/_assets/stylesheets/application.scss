@@ -1,4 +1,6 @@
-@import "../_components/all.scss";
+@import 'base';
+@import 'layout';
+@import '../_components/all.scss';
 
 body {
   background: lightgrey;

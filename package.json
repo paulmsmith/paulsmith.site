@@ -6,10 +6,19 @@
     "node": "^16.0.0"
   },
   "description": "The static site generator template repo",
-  "keywords": [
-    "paulmsmith",
-    "11ty"
-  ],
+  "keywords": ["paulmsmith", "11ty"],
+  "appconfig": {
+    "cloudinary": {
+      "sitename": "paulmsmith",
+      "url": "https://res.cloudinary.com/paulmsmith/image/fetch"
+    },
+    "paths": {
+      "assets": "/assets/",
+      "images": "/assets/images/",
+      "stylesheets": "/assets/stylesheets/"
+    },
+    "url": "https://paulsmith.site"
+  },
   "author": "Paul Michael Smith",
   "license": "MIT",
   "homepage": "https://paulsmith.site",
@@ -51,6 +60,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
+    "netlify-cms": "^2.10.183",
     "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.43.0"
@@ -59,8 +69,6 @@
     "standard": "^16.0.3"
   },
   "standard": {
-    "ignore": [
-      "!.eleventy.js"
-    ]
+    "ignore": ["!.eleventy.js"]
   }
 }

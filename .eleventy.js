@@ -3,6 +3,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('njk', require('./lib/libraries/nunjucks'))
   eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'))
 
+  eleventyConfig.addShortcode(
+    'imgr',
+    require('./lib/shortcodes/cloudinaryimage')
+  )
+
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
@@ -25,15 +30,20 @@ module.exports = function (eleventyConfig) {
   //   })].reverse();
   // });
 
-  // Passthrough
-  eleventyConfig.addPassthroughCopy('./app/admin/**/*.!(njk)') // exclude nunjucks templates
   eleventyConfig.addPassthroughCopy({
     './app/assets/images': './assets/images'
   })
 
-  eleventyConfig.addWatchTarget('./app/_assets/images/')
-  eleventyConfig.addWatchTarget('./app/_assets/stylesheets/')
-  eleventyConfig.addWatchTarget('./app/_assets/javascripts/')
+  // get netlifycms from npm and put it in the right place
+  eleventyConfig.addPassthroughCopy({
+    './node_modules/netlify-cms/dist/netlify-cms.js':
+      './assets/javascripts/netlify-cms.js'
+  })
+
+  eleventyConfig.addWatchTarget('./app/_assets/')
+  // eleventyConfig.addWatchTarget('./app/_assets/images/')
+  // eleventyConfig.addWatchTarget('./app/_assets/stylesheets/')
+  // eleventyConfig.addWatchTarget('./app/_assets/javascripts/')
   eleventyConfig.addWatchTarget('./app/_components/')
 
   // Config
@@ -41,11 +51,12 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
+    jsDataFileSuffix: '.config',
     dir: {
-      input: 'app',
+      input: 'content',
       output: 'public',
-      layouts: '_layouts',
-      includes: '_components'
+      layouts: '../app/_layouts',
+      includes: '../app/_components'
     },
     templateFormats: ['njk', 'md'],
     passthroughFileCopy: true
