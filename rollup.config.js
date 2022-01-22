@@ -4,7 +4,7 @@ const settings = require('./package.json').settings
 
 module.exports = [
   {
-    input: 'app/assets/javascripts/application.js',
+    input: 'src/assets/javascripts/application.js',
     output: {
       file: 'public/assets/javascripts/application.js',
       format: 'iife'

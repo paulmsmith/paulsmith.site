@@ -1,0 +1,74 @@
+:root {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-variant: common-ligatures oldstyle-nums proportional-nums;
+  font-feature-settings: 'kern', 'liga', 'clig', 'onum', 'pnum';
+  text-underline-position: under;
+  font-size: 112%;
+  font-size: calc(112% + 0.5vw);
+  letter-spacing: -0.0075em;
+  line-height: 1.25;
+}
+
+@font-face {
+  font-family: 'font-a';
+  src: url('/assets/fonts/SuisseIntl-Medium.woff2') format('woff2'),
+    url('/assets/fonts/SuisseIntl-Medium.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blanco';
+  src: url('/assets/fonts/Blanco-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Blanco-Regular.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'font-b';
+  src: url('/assets/fonts/font-b-book.woff2') format('woff2'),
+    url('/assets/fonts/font-b-book.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'font-b';
+  src: url('/assets/fonts/font-b-bold.woff2') format('woff2'),
+    url('/assets/fonts/font-b-bold.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'font-b';
+  src: url('/assets/fonts/font-b-bolditalic.woff2') format('woff2'),
+    url('/assets/fonts/font-b-italic.woff') format('woff');
+  font-style: italic;
+  font-display: swap;
+}
+
+%bodycopy {
+  font-family: 'font-b', 'Times', cursive;
+  // font-family: 'Blanco', 'Times', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%displaycopy {
+  font-family: 'font-a', 'Times', cursive;
+}
+
+p {
+  @extend %bodycopy;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @extend %displaycopy;
+}

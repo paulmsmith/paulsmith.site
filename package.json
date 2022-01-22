@@ -6,7 +6,10 @@
     "node": "^16.0.0"
   },
   "description": "The static site generator template repo",
-  "keywords": ["paulmsmith", "11ty"],
+  "keywords": [
+    "paulmsmith",
+    "11ty"
+  ],
   "settings": {
     "cloudinary": {
       "sitename": "paulmsmith",
@@ -26,26 +29,28 @@
   "bugs": "https://github.com/paulmsmith/static-site/issues",
   "scripts": {
     "prebuild": "rm -rf public",
-    "build:files": "eleventy --incremental",
+    "build:files": "eleventy",
     "build:javascripts": "rollup --config rollup.config.js",
-    "build:styles": "npx sass --no-source-map --load-path app app/assets/stylesheets:public/assets/stylesheets",
+    "build:stylesheets": "npx sass src/assets/stylesheets:public/assets/stylesheets --load-path src",
     "build": "npm-run-all --serial prebuild build:*",
     "prewatch": "npm run build",
-    "watch:styles": "npx sass --no-source-map --load-path app --watch app/assets/stylesheets:public/assets/stylesheets",
-    "watch:files": "eleventy --serve --incremental --port=8000",
+    "watch:styles": "npx sass src/assets/stylesheets:public/assets/stylesheets --watch --no-source-map --load-path src",
+    "watch:files": "eleventy --serve --port=8000",
     "watch:javascripts": "rollup --config rollup.config.js --watch",
     "watch": "npm-run-all --parallel --race watch:*",
-    "dev": "npm run watch",
     "prestart": "npm run build",
-    "start": "npm run watch:files"
+    "start": "NODE_ENV=development npm run watch"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.9",
+    "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@allmarkedup/nunjucks-with": "^0.1.2",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "accessible-autocomplete": "^2.0.3",
+    "chokidar-cli": "^3.0.0",
+    "deepmerge": "^4.2.2",
     "http-server": "^14.0.0",
     "javascript-stringify": "^2.1.0",
     "lodash": "^4.17.21",
@@ -62,12 +67,15 @@
     "netlify-cms": "^2.10.183",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.43.0",
-    "sass": "^1.45.1"
+    "sass": "^1.45.1",
+    "sass-mq": "^6.0.0"
   },
   "devDependencies": {
     "standard": "^16.0.3"
   },
   "standard": {
-    "ignore": ["!.eleventy.js"]
+    "ignore": [
+      "!.eleventy.js"
+    ]
   }
 }

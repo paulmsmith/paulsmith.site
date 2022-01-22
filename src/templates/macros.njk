@@ -1,0 +1,32 @@
+{# #######################################################
+R E N D E R - C O M P O N E N T - MACRO
+##########################################################
+This macro is a one-stop-shop to render the components
+It enforces a structure when using the components and
+passing them data.
+
+For example:
+
+  {% import "includes/render_component.njk" as component %}
+
+  {{
+    component.render({
+      name: 'header',
+      fields: {
+        title: "Heading text",
+        text: "Paragraph text"
+      }
+    })
+  }}
+
+Macros documentation:
+https://mozilla.github.io/nunjucks/templating.html#macro
+####################################################### #}
+{% macro component(params) %}
+  {% set data = params.data %}
+  {% if params.name %}
+    {%- include "./components/" + params.name + "/" + params.name + ".njk" -%}
+    {% else%}
+    {{ 'You did not provide the filename of the component you wish to render' | console | safe }}
+  {% endif %}
+{% endmacro %}

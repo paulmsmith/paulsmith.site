@@ -1,0 +1,8 @@
+@use "sass:map";
+
+$grey: (
+  default: green,
+  1:#333
+);
+
+$border: map.get($grey,'default');

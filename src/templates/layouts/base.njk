@@ -1,0 +1,44 @@
+{%- import "../macros.njk" as macro -%}
+{% set htmlClasses = '' %}
+<!DOCTYPE html>
+<html lang="en" class="{{ htmlClasses }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% block head %}
+      <link href="/assets/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
+      <meta property="og:title" content="{{ title }}">
+      {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
+      <meta property="og:image" content="/assets/images/opengraph-image.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    {% endblock %}
+  </head>
+  <body>
+    {% block masthead %}
+      <div class="contain">
+        <header class="masthead">
+          <div>Paul Smith</div>
+        </header>
+      </div>
+    {% endblock %}
+    <main class="contain">
+      {% block main %}
+        {{ content | safe  }}
+      {% endblock %}
+    </main>
+  </body>
+  <!-- detect js -->
+  <script id="detectJS">
+    document.body.className = (
+      (document.body.className)
+      ? document.body.className + ' js-enabled'
+      : 'js-enabled');
+  </script>
+  {%- if currentEnv == 'production' -%}
+    <script async defer data-domain="paulsmith.site" src="https://loggychops.paulsmith.site/js/index.js"></script>
+  {%- endif -%}
+</html>

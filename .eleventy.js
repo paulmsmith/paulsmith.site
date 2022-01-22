@@ -1,6 +1,4 @@
 module.exports = function (eleventyConfig) {
-  // Template libraries
-  eleventyConfig.setLibrary('njk', require('./lib/libraries/nunjucks'))
   eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'))
 
   eleventyConfig.addShortcode(
@@ -14,6 +12,7 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date'))
+  eleventyConfig.addFilter('deepmerge', require('./lib/filters/deepmerge'))
   eleventyConfig.addFilter('includes', require('./lib/filters/includes'))
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown'))
   eleventyConfig.addFilter('slug', require('./lib/filters/slug'))
@@ -31,7 +30,8 @@ module.exports = function (eleventyConfig) {
   // });
 
   eleventyConfig.addPassthroughCopy({
-    './app/assets/images': './assets/images'
+    './src/assets/images': './assets/images',
+    './src/assets/fonts': './assets/fonts'
   })
 
   // get netlifycms from npm and put it in the right place
@@ -40,21 +40,22 @@ module.exports = function (eleventyConfig) {
       './assets/javascripts/netlify-cms.js'
   })
 
-  eleventyConfig.addWatchTarget('./app/assets/')
-  eleventyConfig.addWatchTarget('./app/components/')
+  eleventyConfig.addWatchTarget('./src/assets/')
+  eleventyConfig.addWatchTarget('./src/assets/stylesheets/')
+  eleventyConfig.addWatchTarget('./src/templates/components/')
 
   // Config
   return {
+    dir: {
+      input: 'src',
+      output: 'public',
+      includes: 'templates',
+      layouts: 'templates/layouts'
+    },
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     jsDataFileSuffix: '.config',
-    dir: {
-      input: 'content',
-      output: 'public',
-      layouts: '../app/layouts',
-      includes: '../app/components'
-    },
     templateFormats: ['njk', 'md'],
     passthroughFileCopy: true
   }
