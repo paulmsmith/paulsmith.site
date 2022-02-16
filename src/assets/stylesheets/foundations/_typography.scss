@@ -1,0 +1,54 @@
+@use "sass:map";
+@use '../abstracts' as _;
+@use '../abstracts/mixins/font-face' as *;
+
+// this monstrosity loops over all the fonts in the fonts map
+// which is dragged in from abstracts
+@each $font in _.get-font(fonts) {
+  @include generate-font-face(
+    $font-family: map.get($font, 'font-family'),
+    $font-file: #{_.get-font(path)}#{map.get($font, 'font-file')},
+    $font-weight: unquote(map.get($font, 'font-weight')),
+    $font-style: unquote(map.get($font, 'font-style'))
+  );
+  // this is to remind me of the available fonts in terminal
+  @debug '\A ================ \A New font added: \A #{map.values($font)} \A ================';
+}
+
+:root {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-variant: common-ligatures oldstyle-nums proportional-nums;
+  font-feature-settings: 'kern', 'liga', 'clig', 'onum', 'pnum';
+  text-underline-position: under;
+  font-size: _.$base-font-size;
+  font-size: calc(_.$base-font-size + 0.5vw);
+  line-height: 1.25;
+}
+
+%bodycopy {
+  // font-family: 'font-b', 'Times', cursive;
+  font-family: 'font-b', 'Times', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%displaycopy {
+  font-family: 'font-a', 'Times', cursive;
+}
+
+p {
+  @extend %bodycopy;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @extend %displaycopy;
+}
+
+h1 {
+  font-size: 1.5rem;
+}

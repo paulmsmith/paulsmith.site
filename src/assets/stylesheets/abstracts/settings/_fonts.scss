@@ -1,0 +1,34 @@
+@use 'sass:math';
+
+$base-font-size: 100% * math.div(18, 16);
+
+$fonts: (
+  // absolute path to where the fonts live
+    'path': '/assets/fonts/',
+  // sass list of sass maps with details for each font
+    'fonts':
+    (
+      'font-family': 'font-a',
+      'font-file': 'SuisseIntl-Medium',
+      'font-weight': 'bold',
+      'font-style': 'normal'
+    )
+    (
+      'font-family': 'font-b',
+      'font-file': 'Blanco-Regular',
+      'font-weight': 'normal',
+      'font-style': 'normal'
+    )
+    (
+      'font-family': 'font-b',
+      'font-file': 'font-b-bold',
+      'font-weight': 'bold',
+      'font-style': 'normal'
+    )
+    (
+      'font-family': 'font-b',
+      'font-file': 'font-b-italic',
+      'font-weight': 'normal',
+      'font-style': 'italic'
+    )
+);

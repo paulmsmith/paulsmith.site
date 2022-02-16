@@ -1,0 +1,44 @@
+@function deep-map-merge ($map, $maps...) {
+  $last: nth($maps, -1);
+  $deep: $last == true;
+  $max: if($deep, length($maps) - 1, length($maps));
+
+  // Loop through all maps in $maps...
+  @for $i from 1 through $max {
+    // Store current map
+    $current: nth($maps, $i);
+
+    // If not in deep mode, simply merge current map with map
+    @if not $deep {
+      $map: map-merge($map, $current);
+    }
+    @else {
+      // If in deep mode, loop through all tuples in current map
+      @each $key, $value in $current {
+
+        // If value is a nested map and same key from map is a nested map as well
+        @if type-of($value) == 'map' and type-of(map-get($map, $key)) == 'map' {
+          // Recursive extend
+          $value: deep-map-merge(map-get($map, $key), $value, true);
+        }
+
+        // Merge current tuple with map
+        $map: map-merge($map, ($key: $value));
+      }
+    }
+  }
+  @return $map;
+}
+
+@function non-destructive-map-merge($parent-map, $child-map) {
+	$result: $parent-map;
+	@each $key, $value in $child-map {
+		@if (not map-has-key($result, $key)) or (type-of(map-get($result, $key)) != type-of($value)) or (not (type-of(map-get($result, $key)) == map and type-of($value) == map)) {
+			$result: map-merge($result, ($key: $value));
+		}
+		@else {
+			$result: map-merge($result, ($key: non-destructive-map-merge(map-get($result, $key), $value)));
+		}
+	}
+	@return $result;
+}

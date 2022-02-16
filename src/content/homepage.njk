@@ -9,12 +9,7 @@ eleventyComputed:
 ---
 {% extends "layouts/base.njk" %}
 {% block main %}
-  <h1>Homepage</h1>
-  <p>Hello! You've reached the home of Paul Smith, a designer based in rainy Manchester, UK.</p>
-  {{ macro.component({
-      name: 'list',
-      data: {
-        text: 'hello'
-      }
-    })}}
+  <div class="contain contain--centered">
+    <p>Hello! You've reached the home of Paul Smith, a designer based in rainy Manchester, UK.</p>
+  </div>
 {% endblock %}

@@ -1,5 +1,2 @@
-@import 'base';
-@import 'colour';
-@import 'layout';
-@import 'typography';
-@import '../../templates/components/all.scss';
+@use 'foundations';
+@use '../../templates/components/all.scss';

@@ -1,0 +1,23 @@
+// private
+// --------------------------------------------------------
+@use 'settings/colours';
+@use 'settings/dimensions';
+@use 'settings/fonts';
+@use 'functions/get';
+
+// public
+// --------------------------------------------------------
+
+$base-font-size: fonts.$base-font-size;
+
+@function get-colour($key) {
+  @return get.get($key, colours.$colours);
+}
+
+@function get-width($key) {
+  @return get.get($key, dimensions.$widths);
+}
+
+@function get-font($key) {
+  @return get.get($key, fonts.$fonts);
+}

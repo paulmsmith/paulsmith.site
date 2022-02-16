@@ -1,3 +1,5 @@
+@use '../abstracts/' as _;
+
 .contain {
   &--centered {
     margin-left: auto;
@@ -7,5 +9,5 @@
 }
 
 .masthead {
-  border-bottom: 5px solid #000;
+  border-bottom: 1px solid _.get-colour('border');
 }
