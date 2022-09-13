@@ -47,7 +47,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@allmarkedup/nunjucks-with": "^0.1.2",
     "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
     "accessible-autocomplete": "^2.0.3",
     "chokidar-cli": "^3.0.0",
     "deepmerge": "^4.2.2",
