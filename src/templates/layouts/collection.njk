@@ -1,0 +1,38 @@
+{% extends "layouts/base.njk" %}
+
+{% block main %}
+
+  <h1 class="heading-title heading-title--separated">{{ title }}</h1>
+  {% if pagination.pageNumber > 0 %}
+    <p>Page {{ pagination.pageNumber + 1 }}</p>
+  {% endif %}
+
+  <ul class="list list--spaced">
+    {%- for item in collectionItems %}
+    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {%- endfor %}
+  </ul>
+
+ {% if pagination.href.previous or pagination.href.next %}
+
+  <hr class="section-break section-break--decorative">
+
+    <ul class="c-post-navigation">
+      {% if pagination.href.previous %}
+        <li class="c-post-navigation__item c-post-navigation__item--prev">
+          <div class="c-post-navigation__item__label"><span aria-hidden="true">← </span>Previous </div>
+          <a href="{{pagination.href.previous}}">{{ "Previous page" | safe }}</a>
+        </li>
+      {% endif %}
+      {% if pagination.href.next %}
+        <li class="c-post-navigation__item c-post-navigation__item--next">
+          <div class="c-post-navigation__item__label">Next<span aria-hidden="true"> →</span></div>
+          <a href="{{pagination.href.next}}">{{ "Next page" | safe }}</a>
+        </li>
+      {% endif %}
+    </ul>
+
+ {% endif %}
+
+
+{% endblock %}

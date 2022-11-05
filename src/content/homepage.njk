@@ -2,6 +2,9 @@
 title: "Home"
 permalink: index.html
 description: ""
+entryCount:
+  select: 5
+  weeknotes: 5
 eleventyComputed:
   eleventyNavigation:
     key: home
@@ -9,7 +12,54 @@ eleventyComputed:
 ---
 {% extends "layouts/base.njk" %}
 {% block main %}
-  <div class="contain contain--centered">
-    <p>Hello! You've reached the home of Paul Smith, a designer based in rainy Manchester, UK.</p>
+
+  <section class="prose">
+    <p>Lead Interaction Designer at the Department for Levelling Up, Housing and Communities (<acronym title="Department for Levelling Up, Housing and Communities">DLUHC</acronym>). Read <a href="/about/" class="link link--onward">about Paul</a></p>
+  </section>
+  <!-- / .prose -->
+
+  <hr class="section-break section-break--s">
+
+  <section class="prose">
+    <h2 class="heading-title heading-title--separated" id="select-articles">Select articles</h2>
+  </section>
+  <!-- / .prose -->
+
+  <ul class="list list--entries list--spaced">
+    {%- for item in collections.posts -%}
+      {% if (loop.index <= entryCount.select) %}
+      <li class="list__item">
+        <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+      </li>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
+
+  <div class="prose">
+    <p><a href="/writing" class="link link--onward">All articles</a></p>
   </div>
+
+  <hr class="section-break section-break--s">
+
+  <section class="prose">
+    <h2 class="heading-title heading-title--separated" id="weeknotes">Weeknotes</h2>
+  </section>
+  <!-- / .prose -->
+
+  <ul class="list list--entries list--spaced">
+    {%- for item in collections.weeknotes -%}
+      {% if (loop.index <= entryCount.select) %}
+      <li class="list__item">
+        <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
+        <a href="{{ item.url }}" class="list__item-link">{{ item.data.title }}</a>
+      </li>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
+
+  <div class="prose">
+    <p><a href="/weeknotes" class="link link--onward">All weeknotes</a></p>
+  </div>
+
 {% endblock %}

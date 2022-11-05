@@ -1,0 +1,9 @@
+---
+title: Weeknotes
+layout: 'collection.njk'
+pagination:
+  data: collections.weeknotes
+  size: 5
+  alias: collectionItems
+permalink: "{{ page.fileSlug | slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/index.html{% endif %}"
+---

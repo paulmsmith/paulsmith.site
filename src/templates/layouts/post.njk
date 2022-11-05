@@ -1,0 +1,66 @@
+{% extends "layouts/base.njk" %}
+
+{% set currentPost = collections.posts | getCollectionItem(page) %}
+{%- set previousPost = collections.posts | getNextCollectionItem(page) %}
+{%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
+
+{% block linktags %}
+  <link href="/assets/stylesheets/syntax.css" media="all" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+
+  <div class="prose">
+    {{ content | markdown | safe }}
+  </div>
+
+  <div class="l-footer l-footer--post">
+
+    <hr class="section-break section-break--decorative">
+
+    <div class="c-meta c-meta--publication">
+      <span class="c-meta__publication-date">
+        <span class="c-meta__publication-date__label">Published: </span>
+        <time datetime="{{ page.date | date }}" class="c-meta__publication-date__date c-meta__time">
+          <em>{{ page.date | date("d LLLL y") }}</em>
+        </time>
+      </span>
+      {% if currentPost.data.tags %}
+      in:
+      <ul class="c-meta__tags">
+        {% for tag in currentPost.data.tags %}
+          <li class="c-meta__tags__item c-meta__tags__item--alt"><span aria-hidden="true">#</span>{{ tag | title }}{% if not loop.last %}<span class="u-visually-hidden">,</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if original_url %}
+      <div class="c-meta__row c-meta__row--small">
+        Originally posted:<br> <a href="{{ original_url }}">{{ original_url }}</a>
+      </div>
+      {% endif %}
+    </div>
+    <!-- / .c-meta -->
+
+  </div>
+  <!-- /.l-footer l-footer--post -->
+
+  {% if nextPost or previousPost %}
+
+    <hr class="section-break section-break--decorative">
+
+    <ul class="c-post-navigation">
+      {%- if previousPost %}
+        <li class="c-post-navigation__item c-post-navigation__item--prev">
+          <div class="c-post-navigation__item__label"><span aria-hidden="true">← </span>Previous </div>
+          <a href="{{ previousPost.url | url }}">{{ previousPost.data.title | safe }}</a>
+        </li>
+      {% endif %}
+      {%- if nextPost %}
+        <li class="c-post-navigation__item c-post-navigation__item--next">
+          <div class="c-post-navigation__item__label">Next<span aria-hidden="true"> →</span></div>
+          <a href="{{ nextPost.url | url }}">{{ nextPost.data.title | safe }}</a>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}

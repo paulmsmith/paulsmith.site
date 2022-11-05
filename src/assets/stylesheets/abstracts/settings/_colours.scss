@@ -137,14 +137,25 @@ $palette: (
 
 $colours: (
   'page': (
-    'background': get('cyan.1')
+    'background': get('indigo.0')
   ),
-  'border': get('cyan.3'),
+  'border': (
+    'default': get('indigo.4'),
+    'light': get('indigo.2'),
+    'dark': get('indigo.8'),
+  ),
   'text': (
     'body': get('grey.9'),
+    'subtle': get('grey.7'),
     'link': (
       'default': get('blue.9'),
-      'visited': get('blue.7')
+      'visited': get('indigo.7'),
+      'focus': get('indigo.7'),
     )
-  )
+  ),
+  'palette': $palette
 );
+
+// 'default': get('indigo.9'),
+// 'visited': get('violet.7'),
+// 'focus': get('grey.7'),

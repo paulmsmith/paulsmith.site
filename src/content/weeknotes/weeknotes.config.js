@@ -1,3 +1,3 @@
 module.exports = {
-  layout: 'base.njk'
+  layout: 'weeknote.njk'
 }

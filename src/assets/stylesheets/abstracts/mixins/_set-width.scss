@@ -1,0 +1,11 @@
+@mixin content-width($width: 32rem, $increase: 0) {
+  @if $increase > 0 {
+    max-width: calc(#{$width} + #{$increase}%);
+  } @else {
+    max-width: $width;
+  }
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

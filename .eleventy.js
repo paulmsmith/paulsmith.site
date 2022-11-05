@@ -1,10 +1,13 @@
+require('dotenv').config()
+const node_env = process.env.NODE_ENV;
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addGlobalData('node_env', node_env)
+  eleventyConfig.addGlobalData('isDev',node_env == 'development' ? true : false)
+
   eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'))
 
-  eleventyConfig.addShortcode(
-    'imgr',
-    require('./lib/shortcodes/cloudinaryimage')
-  )
+  eleventyConfig.addShortcode('imgr',require('./lib/shortcodes/cloudinaryimage'))
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
@@ -19,15 +22,31 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('sort', require('./lib/filters/sort'))
   eleventyConfig.addFilter('widont', require('./lib/filters/widont'))
   eleventyConfig.addFilter('console', require('./lib/filters/console'))
+  eleventyConfig.addFilter('dump', require('./lib/filters/dump'))
   eleventyConfig.addFilter('find', require('./lib/filters/find'))
+  eleventyConfig.addFilter('padstart', require('./lib/filters/padstart'))
 
-  // // Creates a 'collection' of guidance content but only those that are not set to be hidden
-  //  eleventyConfig.addCollection('guidance', collection => {
-  //   return [...collection.getFilteredByGlob('./app/content/guidance/*.md').filter(function(item) {
-  //     // will only return items that are not specifically hidden
-  //     return item.data.hidden === false
-  //   })].reverse();
-  // });
+  // Filter source file names using a glob
+  eleventyConfig.addCollection('weeknotes', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('./src/content/weeknotes/*.md')
+      .reverse()
+  })
+
+  eleventyConfig.addCollection('posts', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('./src/content/posts/*.md')
+      .reverse()
+  })
+
+  //   // Creates a 'collection' of guidance content but only those that are not set to be hidden
+  // eleventyConfig.addCollection('posts', collection => {
+  //   return [
+  //     ...collection
+  //       .getFilteredByGlob('./app/posts/*.md')
+  //       .filter(function (item) {})
+  //   ].reverse()
+  // })
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/images': './assets/images',

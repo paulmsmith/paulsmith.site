@@ -5,16 +5,65 @@
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
+html {
   position: relative;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  background: rgba(_.get-colour('page.background'),0.35);
+}
+
+body {
   margin: 0;
-  background: _.get-colour('page.background');
 }
 
 a {
   color: _.get-colour('text.link.default');
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+  &:focus {
+    outline-color: _.get-colour('text.link.focus');
+    outline-style: solid;
+    outline-width: 3px;
+  }
+}
+
+a.l-skip-link {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0525rem);
+  text-underline-offset: -0.055em;
+  font-size: .75rem;
+  line-height: 1.1428571429;
+  display: block;
+  padding: 10px 15px 15px;
+  &:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+    white-space: inherit !important;
+  }
+  &:focus {
+    background: rgba(_.get-colour('palette.blue.9'),1);
+    outline: 0;
+    color: #fff;
+  }
 }

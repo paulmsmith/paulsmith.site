@@ -1,0 +1,54 @@
+@use '../../../assets/stylesheets/abstracts/' as _;
+@use 'sass-mq/mq' as *;
+
+$_thiscolour: _.get-colour('border.dark');
+
+.c-sectionhead {
+  &--block {
+    // background: #000;
+    // color: #fff;
+  }
+}
+
+.c-sectionhead--weeknote {
+  * { margin: 0; }
+  position: relative;
+  text-align: center;
+  border-bottom: 2px solid $_thiscolour;
+  padding: 0 0 1.5rem 0;
+  @include mq($from: large) {
+  }
+  .c-sectionhead__heading-1 {
+    margin-bottom: .25em;
+    line-height: 1;
+    font-size: 1.5rem;
+    font-family: 'font-a';
+    letter-spacing: -.045em;
+  }
+  .c-sectionhead__strapline {
+    color: #666;
+    font-weight: normal;
+    font-family: 'font-a';
+    font-size: 1rem;
+    margin-bottom: 0.25em;
+    padding: 0.25em;
+  }
+  .c-sectionhead__note {
+    font-family: 'Dank mono', 'Incosolata', monospace;
+    font-size: 0.6rem;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 0.25em .5em;
+    line-height: 1.2;
+    border: 2px solid $_thiscolour;
+    color: $_thiscolour;
+    @include mq($from: large) {
+      position: absolute;
+      top: -1em;
+      right: 0;
+    }
+  }
+  abbr {
+    text-decoration: none;
+  }
+}

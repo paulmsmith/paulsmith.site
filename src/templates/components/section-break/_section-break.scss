@@ -1,0 +1,30 @@
+@use '../../../assets/stylesheets/abstracts/' as _;
+
+.section-break {
+  display: block;
+  overflow: hidden;
+  height: 1px;
+  border: 0;
+  background: transparent;
+  margin: 1.5rem 0;
+
+  &--visible {
+    background: _.get-colour('border.default');
+  }
+
+  &--s {
+    margin: 0.75rem 0;
+  }
+
+  &--l {
+    margin: 2rem 0;
+  }
+
+  &--decorative {
+    height: 7px;
+    background: url(/assets/images/zigzag_divider.svg) 0 0;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+}

@@ -1,0 +1,9 @@
+---
+title: Writing
+layout: 'collection.njk'
+pagination:
+  data: collections.posts
+  size: 10
+  alias: collectionItems
+permalink: "{{ page.fileSlug | slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/index.html{% endif %}"
+---

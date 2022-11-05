@@ -1,0 +1,47 @@
+---
+title: "Elements"
+permalink: '/elements.html'
+description: ""
+eleventyComputed:
+  eleventyNavigation:
+    key: 'elements'
+    title: "{{ title }}"
+---
+{% extends "layouts/base.njk" %}
+{% block main %}
+
+<section class="prose">
+
+    <h2 class="heading-title" id="about">About</h2>
+
+    <p>Paul is a public-interest designer, based in Manchester, England. Currently a lead interaction designer in <a href="https://gov.uk">Her Majesty's Government</a>.</p>
+    <p><a href="">Find out more about Paul</a></p>
+
+    <hr class="section-break">
+
+    <h2 class="heading-title" id="weeknotes"><a href="">Weeknotes</a></h2>
+
+    <ul>
+      <li>lorem</li>
+      <li>lorem</li>
+      <li>lorem</li>
+      <li>lorem</li>
+      <li>lorem</li>
+    </ul>
+
+    <figure>
+      <img src="https://placeimg.com/640/480/tech/grayscale" alt="" loading="lazy" decoding="async">
+      <figcaption>
+        At Stockholm Central Station before boarding the train to Gothenburg.
+      </figcaption>
+    </figure>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non eos laboriosam placeat animi quia porro laborum aut eum, voluptate quo. Quisquam aliquam, quod accusantium suscipit corrupti sit beatae hic iste.</p>
+
+    <hr class="section-break">
+
+    <h2 class="heading-title" id="select-articles">Select articles</h2>
+
+</section>
+
+{% endblock %}

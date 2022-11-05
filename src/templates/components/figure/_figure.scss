@@ -1,0 +1,13 @@
+@use '../../../assets/stylesheets/abstracts/' as _;
+
+figure {
+  img {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  figcaption {
+    font-size: 90%;
+  }
+}

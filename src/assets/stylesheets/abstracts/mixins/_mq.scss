@@ -1,0 +1,5 @@
+@use '../settings/layout';
+
+@forward 'sass-mq/mq' with (
+  $breakpoints: layout.$breakpoints
+);

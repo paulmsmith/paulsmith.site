@@ -1,0 +1,17 @@
+.link {
+
+}
+
+.link--onward {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  &:after {
+    // content: '➞';
+    // content: '❯';
+    content: '›';
+    display: inline-block;
+    margin-left: 0.25em;
+    vertical-align: top;
+  }
+}

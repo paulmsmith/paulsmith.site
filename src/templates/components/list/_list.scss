@@ -1,166 +1,110 @@
 @use "sass:math";
+@use '../../../assets/stylesheets/abstracts/' as _;
 
-// .list {
-//   > li {
-//     @include margin(0 0 0.25em 0);
-//   }
-// }
+.list {
+  list-style-type: none;
+  padding: 0;
+  > li {
+    margin: 0 0 0.25em 0;
+  }
+}
 
-// .list--links {
-//   list-style-type: none;
-//   padding: 0;
-//   > li {
-//     @include margin(0 0 0.25em 0);
-//   }
-// }
+.list--tld {
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
-// .list--links-tout {
-//   > li {
-//     @include padding(0.25em 0);
-//     border-bottom: 1px dotted #000;
-//   }
-//   > li > a {
-//     padding: 0.15em 0;
-//   }
-// }
+.list--entries {
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: .05em;
+  }
+  .list__item {
+    padding-bottom: 1em;
+    border-bottom: 1px dotted _.get-colour('border.light');
+    &-datetime {
+      color: _.get-colour('text.body');
+      min-width: 25%;
+      font-family: 'font-a';
+      font-size: 0.75em;
+    }
+  }
+}
 
-// .list--links-aside {
-//   > li {
-//     @include padding(0.2em 0);
-//     @include font-size(1.2rem);
-//   }
-//   > li > a {
-//     padding: 0.15em 0;
-//   }
-// }
+.list--spaced {
+  li {
+    margin-bottom: .75em;
+  }
+}
 
-// .list--entries {
-//   list-style-type: none;
-//   padding: 0;
-//   .list__item {
-//     @include font-size(1.35rem);
-//     @include padding-bottom(1.5rem);
-//     &:not(:last-child) {
-//       @include margin-bottom(1.5rem);
-//     }
-//     border-bottom: 1px solid #dfdfdf;
-//     a {
-//       display: block;
-//     }
-//     time {
-//       @include font-size(0.7em);
-//       color: #666;
-//       display: block;
-//       @include margin-bottom(0.25rem);
-//     }
-//     > * {
-//       margin: 0;
-//     }
-//     @include mq($from: medium) {
-//       line-height: 1.2;
-//       display: flex;
-//       flex-flow: row-reverse;
-//       align-items: center;
-//       justify-content: space-between;
-//       a {
-//         flex-direction: row-reverse;
-//       }
-//       time {
-//         min-width: 25%;
-//         text-align: right;
-//       }
-//     }
-//   }
-// }
+.c-poster-list {
+  background: #1d70b8;
+  padding: 2em;
+  padding-left: 2.5em;
+  color: #fff;
+  font-size: calc(1rem + 0.384vw);
+  margin: calc(1.27rem + 0.64vw) auto;
+  font-family: 'font-a';
+  li:not(:last-child) {
+    margin-bottom: 1em;
+  }
+  li:first-child {
+    margin-top: 0;
+  }
+  @include _.mq($from: large) {
+    max-width: calc(100% - 100px);
+  }
+}
 
-// .list--tld {
-//   list-style-type: none;
-//   padding: 0;
-//   .list__item {
-//     @include font-size(1.35rem);
-//     @include padding-bottom(1.5rem);
-//     &:not(:last-child) {
-//       @include margin-bottom(1.5rem);
-//     }
-//     border-bottom: 1px solid #dfdfdf;
-//     time {
-//       @include font-size(0.8em);
-//       color: #666;
-//       display: block;
-//       @include margin-bottom(0.25em);
-//     }
-//     &__copy {
-//       @include margin(1em 0);
-//       font-family: 'font-b';
-//       &:last-of-type {
-//         margin-bottom: 0;
-//       }
-//     }
-//   }
-// }
-
-// .list--step-by-step {
-//   list-style: none;
-//   counter-reset: sbs-counter;
-//   @include margin(2em 0);
-//   padding: 0;
-//   li {
-//     counter-increment: sbs-counter;
-//     @include font-size(1em);
-//     @include margin(0);
-//     @include padding(0 0 2em 3em);
-//     &:last-of-type {
-//       padding-bottom: 0;
-//     }
-//     p {
-//       @include margin(0 0 1em 0);
-//       &:last-child {
-//         margin-bottom: 0;
-//       }
-//     }
-//     position: relative;
-//     &:after {
-//       content: '';
-//       position: absolute;
-//       top: 0.25em;
-//       left: math.div(2.5em, 3);
-//       width: 3px;
-//       height: calc(100%);
-//       background: #000;
-//       display: block;
-//     }
-//     &:before {
-//       position: absolute;
-//       left: 0;
-//       top: 0.25em;
-//       content: '0' counter(sbs-counter);
-//       font-weight: bold;
-//       @include font-size(1em);
-//       @include margin-right(0.5rem);
-//       line-height: 1;
-//       background: #000;
-//       color: white;
-//       padding: 0.35em 0.35em;
-//       z-index: 100;
-//     }
-//   }
-// }
-
-// .c-poster-list {
-//   background: #1d70b8;
-//   @include padding(2em);
-//   @include padding-left(2.5em);
-//   color: #fff;
-//   @include font-size(1.55rem);
-//   @include margin(1.75rem auto);
-//   font-weight: normal;
-//   @include mq($from: medium) {
-//     max-width: 60%;
-//   }
-//   li {
-//     @include margin(0 0 1.25em);
-//     &:last-child {
-//       margin-bottom: 0;
-//     }
-//   }
-// }
+.list--step-by-step {
+  @include _.content-width;
+  list-style: none;
+  counter-reset: sbs-counter;
+  margin: 2rem auto;
+  padding: 0;
+  display: block;
+  li {
+    counter-increment: sbs-counter;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0 1.75em 3em;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    p {
+      margin: 0 0 1em 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0.25em;
+      left: math.div(2.5em, 3);
+      width: 3px;
+      height: calc(100%);
+      background: #000;
+      display: block;
+    }
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0.25em;
+      content: '0' counter(sbs-counter);
+      // font-weight: bold;
+      font-size:1em;
+      margin-right:0.5rem;
+      line-height: 1;
+      background: #000;
+      color: white;
+      padding: 0.35em 0.35em;
+      z-index: 100;
+      font-family: 'font-a';
+    }
+  }
+}

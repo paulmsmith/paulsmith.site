@@ -1,0 +1,11 @@
+{% extends "layouts/base.njk" %}
+
+{% block linktags %}
+  <link href="/assets/stylesheets/syntax.css" media="all" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+  <div class="prose">
+    {{ content | markdown | safe }}
+  </div>
+{% endblock %}

@@ -6,7 +6,9 @@ social_description: 'Learn about user needs from the beginning'
 social_image: 'content/un101.jpg'
 ---
 
-Trying to learn about user needs but don't know where to start? Then this is the post for you.
+# {{ title }}
+
+A post to help you understand the concept and value of 'user needs'.
 
 [[toc]]
 
@@ -14,8 +16,7 @@ Trying to learn about user needs but don't know where to start? Then this is the
 
 The one line definition of 'user needs' I tend to give is:
 
-> **‘User needs’
-> are the needs that a user has of a service, and which that service must satisfy for the user to get the right outcome for them.**
+> **‘User needs’ are the needs that a user has of a service, and which that service must satisfy for the user to get the right outcome for them.**
 
 People smarter than me have written about user needs in detail.
 

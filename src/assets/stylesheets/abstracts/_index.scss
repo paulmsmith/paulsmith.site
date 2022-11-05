@@ -4,6 +4,7 @@
 @use 'settings/dimensions';
 @use 'settings/fonts';
 @use 'functions/get';
+@forward 'mixins/';
 
 // public
 // --------------------------------------------------------

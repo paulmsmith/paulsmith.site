@@ -1,30 +1,38 @@
 ---
+layout: false
 permalink: "admin/config.yml"
 ---
+{% set siteDisplayURL = "http://localhost:8000" if isDev else "https://paulsmith.site" %}
 # Docs: https://www.netlifycms.org/docs/configuration-options/
 backend:
   name: github
   branch: main
-  repo: digital-land/content-site # cms repo
+  repo: paulmsmith/paulsmith.site # cms repo
   base_url: https://ps-cms-oauth-service.herokuapp.com # OAuth server
 # when true will assume needs netlify-cms-proxy-server running: npx netlify-cms-proxy-server
-local_backend: {{ env }}
+local_backend: {% if node_env == "development" %}true{% else %}false{% endif %}
 logo_url: /assets/images/logo.svg
 public_folder: /assets/images/uploads
-media_folder: app/_assets/images/uploads
-display_url: https://paulsmith.site
-site_url: {{ "http://localhost:8080" if env == true else "https://paulsmith.site" }}
+media_folder: app/assets/images/uploads
+site_url: {{ siteDisplayURL }}
+display_url: {{ siteDisplayURL }}
 collections:
-  - name: "cars"
-    label: "Car pages"
-    label_singular: "Car page"
-    folder: "app/content/showroom"
+  - name: "weeknotes"
+    label: "Weeknotes"
+    label_singular: "Weeknote"
+    folder: "src/content/weeknotes"
     create: true
-    slug: {% raw %}"{{slug}}"{% endraw %}
-    preview_path: {% raw %}"showroom/{{slug}}"{% endraw %}
-fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Hidden", name: "hidden", widget: "boolean", default: false, hint: "Hides this content from the site. Defaults to false." }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text", hint: "A summary of this guidance" }
+    slug: {% raw %}"s{{weeknote.season}}e{{weeknote.episode}}"{% endraw %}
+    preview_path: {% raw %}"weeknotes/{{slug}}/"{% endraw %}
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", date_format: "DD.MM.YYYY"}
+      - label: "Issue"
+        name: "weeknote"
+        widget: "object"
+        collapsed: false
+        fields:
+          - {label: "Season", name: "season", widget: "string"}
+          - {label: "Episode", name: "episode", widget: "string"}
+      - { label: "Social description", name: "social_description", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown" }

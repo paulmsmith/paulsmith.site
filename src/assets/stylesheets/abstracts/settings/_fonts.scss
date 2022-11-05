@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$base-font-size: 100% * math.div(18, 16);
+$base-font-size: 100% * math.div(19, 14);
 
 $fonts: (
   // absolute path to where the fonts live
@@ -9,7 +9,13 @@ $fonts: (
     'fonts':
     (
       'font-family': 'font-a',
-      'font-file': 'SuisseIntl-Medium',
+      'font-file': 'Inter-Regular',
+      'font-weight': 'normal',
+      'font-style': 'normal'
+    )
+    (
+      'font-family': 'font-a',
+      'font-file': 'Inter-SemiBold',
       'font-weight': 'bold',
       'font-style': 'normal'
     )
@@ -21,13 +27,13 @@ $fonts: (
     )
     (
       'font-family': 'font-b',
-      'font-file': 'font-b-bold',
+      'font-file': 'Blanco-Bold',
       'font-weight': 'bold',
       'font-style': 'normal'
-    )
-    (
+      )
+      (
       'font-family': 'font-b',
-      'font-file': 'font-b-italic',
+      'font-file': 'Blanco-BoldItalic',
       'font-weight': 'normal',
       'font-style': 'italic'
     )

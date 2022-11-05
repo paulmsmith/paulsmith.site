@@ -12,6 +12,7 @@ This is the first in a series of blog posts about “how we design” at the [Na
 At the time of writing (September 2019) we are moving from a broad discovery phase of work to an ‘Alpha’ phase for our primary service which enables people to “Get funding for a heritage project”.
 
 This is the time we try out different solutions to the problems we learnt about during discovery.
+
 This where prototypes come in, they help us to learn by doing.
 
 ## What is a prototype?
@@ -26,8 +27,9 @@ Prototypes can be anything, so long as they do a good enough job of representing
 
 We create prototypes to help us learn about a problem we want to solve and potential solutions to it.
 
-They turn our ideas into testable things we can use to show the intention of a design concept to our users. We do
-this with user research to gain insights by watching what people do and listening to what they tell us when using the prototype.
+They turn our ideas into testable things we can use to show the intention of a design concept to our users.
+
+We do this with user research to gain insights by watching what people do and listening to what they tell us when using the prototype.
 
 ### They save time, energy and money
 

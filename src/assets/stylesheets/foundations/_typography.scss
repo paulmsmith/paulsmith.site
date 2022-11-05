@@ -1,18 +1,17 @@
 @use "sass:map";
 @use '../abstracts' as _;
-@use '../abstracts/mixins/font-face' as *;
 
 // this monstrosity loops over all the fonts in the fonts map
 // which is dragged in from abstracts
 @each $font in _.get-font(fonts) {
-  @include generate-font-face(
+  @include _.generate-font-face(
     $font-family: map.get($font, 'font-family'),
     $font-file: #{_.get-font(path)}#{map.get($font, 'font-file')},
     $font-weight: unquote(map.get($font, 'font-weight')),
     $font-style: unquote(map.get($font, 'font-style'))
   );
   // this is to remind me of the available fonts in terminal
-  @debug '\A ================ \A New font added: \A #{map.values($font)} \A ================';
+  // @debug '\A ================ \A New font added: \A #{map.values($font)} \A ================';
 }
 
 :root {
@@ -22,33 +21,172 @@
   font-feature-settings: 'kern', 'liga', 'clig', 'onum', 'pnum';
   text-underline-position: under;
   font-size: _.$base-font-size;
-  font-size: calc(_.$base-font-size + 0.5vw);
-  line-height: 1.25;
+  font-size: calc(_.$base-font-size + 0.2vw);
+  line-height: 1.275;
+  box-sizing: border-box;
+  font-family: 'font-b';
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 %bodycopy {
-  // font-family: 'font-b', 'Times', cursive;
-  font-family: 'font-b', 'Times', cursive;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  font-feature-settings: 'onum' 1;
 }
 
 %displaycopy {
   font-family: 'font-a', 'Times', cursive;
+  letter-spacing: -0.027em;
 }
 
-p {
-  @extend %bodycopy;
+.prose {
+
+  ol,
+  ul,
+  p {
+    &:not([class]) {
+      @extend %bodycopy;
+    }
+  }
+
+  ul:not([class]) {
+    list-style-type: "–";
+    padding: 0 0.5em;
+    li {
+      padding-left: .5em;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &:not([class]) {
+      @extend %displaycopy;
+      a {
+        color: _.get-colour('palette.grey.9');
+        text-decoration: none;
+      }
+      margin: 1.25em 0 0.25em;
+      + * {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  figure {
+    &:not([class]) {
+      border-radius: 0.15rem;
+      overflow: hidden;
+      img {
+        height: auto;
+      }
+      margin: 0;
+    }
+  }
+
+  hr {
+    height: 1px;
+    background: transparent;
+    overflow: hidden;
+    border: 0;
+    background: transparent url(/assets/images/diamond_divider.svg) no-repeat 50% 50%;
+    height: 10px;
+    margin-top: 2.25em;
+    margin-bottom: 2.75em;
+  }
+
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  @extend %displaycopy;
+.markdown-table-of-contents {
+ > ul {
+    > li {
+      margin-bottom: 0.5em;
+    }
+    ul {
+      li {
+        font-size: 0.9em;
+        &:first-child {
+          margin-top: 0.35em;
+        }
+      }
+    }
+  }
 }
 
-h1 {
-  font-size: 1.5rem;
+.heading {
+  font-family: 'font-a';
+  &--toc {
+    // font-weight: normal;
+    font-size: .85rem;
+    margin: 0 0 -.5em 0;
+  }
+}
+
+.heading-title {
+  font-family: 'font-a';
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--proximity  {
+    margin-bottom: .15em;
+    + * {
+      margin-top: 0 !important;
+    }
+  }
+
+  &--separated {
+    border-bottom: 1px solid _.get-colour('border.default');
+    padding-bottom: 0.15em;
+  }
+
+}
+
+.prose--weeknote {
+  ul {
+    padding: 0 1em;
+    list-style-type: '– ';
+  }
+  li {
+    ul {
+      list-style-type: '- ';
+      margin-bottom: 1.5em;
+    }
+    li {
+      margin: 0.5em 0;
+      font-size: 0.925em;
+    }
+    p {
+      margin: 0.75em 0;
+    }
+    margin-bottom: 1em;
+  }
+  h2 {
+    margin: 1em 0 1em;
+    &:first-child {
+      margin-top: 0.5em;
+    }
+  }
+}
+
+.c-annotation {
+  display: block;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: _.get-colour('palette.grey.6');
+  font-weight: bold;
+}
+
+.c-quote {
+  padding: .5em 1.5em;
+  border-left: 10px solid _.get-colour('palette.grey.9');
+  margin: 1.5em 0;
 }
