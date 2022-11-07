@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
+    <title>{{ title }} - @paulmsmith</title>
     {% block head %}
       <link href="/assets/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
       {% block linktags %}{% endblock %}
@@ -17,7 +17,9 @@
       {% for font in [
         'font-b-bold',
         'font-b-bolditalic',
-        'font-b-regular'
+        'font-b-regular',
+        'font-a-regular',
+        'font-a-semibold'
       ] %}
         <link rel="preload" href="/assets/fonts/{{ font }}.woff" as="font" type="font/woff" crossorigin="anonymous">
         <link rel="preload" href="/assets/fonts/{{ font }}.woff2" as="font" type="font/woff2" crossorigin="anonymous">
