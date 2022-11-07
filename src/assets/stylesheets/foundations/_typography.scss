@@ -56,6 +56,14 @@
     padding: 0 0.5em;
     li {
       padding-left: .5em;
+      margin-bottom: .75em;
+    }
+  }
+
+  ol:not([class]) {
+    li {
+      margin-bottom: .5em;
+      line-height: 1.225;
     }
   }
 

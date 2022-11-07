@@ -13,6 +13,45 @@
       <meta property="og:title" content="{{ title }}">
       {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
       <meta property="og:image" content="/assets/images/opengraph-image.png">
+
+      {% for font in [
+        'font-b-bold',
+        'font-b-bolditalic',
+        'font-b-regular'
+      ] %}
+        <link rel="preload" href="/assets/fonts/{{ font }}.woff" as="font" type="font/woff" crossorigin="anonymous">
+        <link rel="preload" href="/assets/fonts/{{ font }}.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+      {% endfor %}
+
+      {%- block metatags -%}
+      {%- if (isDev == false) and (isHomepage) -%}
+        <link rel="canonical" href="https://paulsmith.site/">
+      {%- endif -%}
+      <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+      <link rel="manifest" href="/assets/images/site.webmanifest">
+      <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+      <meta name="msapplication-TileColor" content="#333333">
+      <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+      <!-- open graph data -->
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Paul Smith" />
+      <meta property="og:title" content="{{ title }}">
+      <meta property="og:description" name="description" content="{{ meta_description }}">
+      <meta property="og:url" content="{{ page.url }}">
+      <meta property="og:url" content="https://paulsmith.site" />
+      <meta property="og:image" content="https://paulsmith.site/assets/images/{{ social_image | d('meta/og_image.jpg' )}}" />
+      <!-- twitter card meta -->
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="paulmsmith">
+      <meta name="twitter:title" content="{{ title }}" />
+      <meta name="twitter:description" content="{{ meta_description }}" />
+      <meta name="twitter:image:alt" content="Paul Smith's profile picture.">
+      {%- endblock -%}
+
     {% endblock %}
   </head>
   <body>

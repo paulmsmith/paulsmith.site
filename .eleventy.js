@@ -1,12 +1,15 @@
 require('dotenv').config()
-const node_env = process.env.NODE_ENV;
+const node_env = process.env.NODE_ENV
+const cloudinaryKey = process.env.cloudinaryKey
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData('node_env', node_env)
   eleventyConfig.addGlobalData('isDev',node_env == 'development' ? true : false)
+  eleventyConfig.addGlobalData('cloudinaryKey',cloudinaryKey)
 
   eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'))
 
+  // shortcodes
   eleventyConfig.addShortcode('imgr',require('./lib/shortcodes/cloudinaryimage'))
 
   // Plugins
@@ -25,6 +28,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dump', require('./lib/filters/dump'))
   eleventyConfig.addFilter('find', require('./lib/filters/find'))
   eleventyConfig.addFilter('padstart', require('./lib/filters/padstart'))
+
 
   // Filter source file names using a glob
   eleventyConfig.addCollection('weeknotes', function (collectionApi) {
