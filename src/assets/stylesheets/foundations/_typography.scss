@@ -51,6 +51,10 @@
     }
   }
 
+  figure:not([class]) {
+    margin: 0;
+  }
+
   ul:not([class]) {
     list-style-type: "–";
     padding: 0 0.5em;
@@ -197,4 +201,11 @@
   padding: .5em 1.5em;
   border-left: 10px solid _.get-colour('palette.grey.9');
   margin: 1.5em 0;
+}
+
+.content-image {
+  margin: 0;
+  &--border {
+    border: 1px solid _.get-colour('border.light');
+  }
 }

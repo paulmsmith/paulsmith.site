@@ -61,22 +61,25 @@
     {% block masthead %}
       <div class="l-contain l-content-width">
         <header class="header header--global" id="page-header">
-          <div class="header__content header__content--primary">
-            <p>
-              <a href="/"><img src="/assets/images/logo2.svg" alt="" style="width: 200px;"></a>
-            </p>
-            <nav class="header__nav">
-              <ul class="header__nav-list">
-                {# <li class="header__nav-list__item"><a href="/" class="header__nav-list__link">Home</a></li> #}
-                <li class="header__nav-list__item"><a href="/about/" class="header__nav-list__link">About</a></li>
-                <li class="header__nav-list__item"><a href="/writing/" class="header__nav-list__link">Writing</a></li>
-                <li class="header__nav-list__item"><a href="/weeknotes/" class="header__nav-list__link">Weeknotes</a></li>
-              </ul>
-            </nav>
+          <div class="header__brand">
+                        {% imgr {
+                imagePath: 'paul.jpg',
+                alt: '',
+                width: '240',
+                height: '240',
+                quality: '90',
+                classes: 'header__thumbnail'
+              }
+            %}
+            <a href="/"><img src="/assets/images/logo2.svg" alt="" style="width: 200px;"></a>
           </div>
-          <div class="header__content header__content--secondary">
-            <img src="/assets/images/paul.jpg" alt="" class="header__thumbnail">
-          </div>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-list__item"><a href="/about/" class="header__nav-list__link">About</a></li>
+              <li class="header__nav-list__item"><a href="/writing/" class="header__nav-list__link">Writing</a></li>
+              <li class="header__nav-list__item"><a href="/weeknotes/" class="header__nav-list__link">Weeknotes</a></li>
+            </ul>
+          </nav>
         </header>
       </div>
     {% endblock %}
@@ -91,7 +94,7 @@
       <footer class="footer footer--global">
         <div class="footer__primary">
           <p class="u-mb-0">&copy; Paul Smith</p>
-          <p class="u-mt-0">Hand coded in Manchester, England <img src="/assets/images/mcr_bee_paulsmith.svg" alt="Symbol of Manchester" class="u-icon u-icon--inline u-space u-space--left" width="30"></p>
+          <p class="u-mt-0">Made in Manchester, England <img src="/assets/images/mcr_bee_paulsmith.svg" alt="Symbol of Manchester" class="u-icon u-icon--inline u-space u-space--left" width="30"></p>
         </div>
       </footer>
       <!-- /.footer--global -->

@@ -15,27 +15,34 @@ $border-declaration: 2px solid _.get-colour('border.dark');
 
 .header {
   &--global {
-    display: flex;
-    justify-content: space-between;
     border-bottom: $border-declaration;
     margin-bottom: 2rem;
-    padding: 1.5rem 0;
-    p {
-      margin: 0 0 .5em 0;
-    }
+    padding: 1.25rem 0 1rem;
     .header {
+      &__brand {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        margin-bottom: .5rem;
+        @include _.mq($from: large) {
+          align-items: flex-end;
+        }
+      }
       &__thumbnail {
         display: block;
-        max-width: 100%;
-        height: 1.155rem * 3;
-        border-radius: 100%;
-        aspect-ratio: auto 480 / 480;
-        margin-left: auto;
-      }
-      &__strapline {
-        font-size: 0.90em;
-        color: _.get-colour('text.body');
-        line-height: 1.2;
+        max-width: 15%;
+        @include _.mq($from: medium) {
+          max-width: 10%;
+        }
+        margin: 0;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 100%;
+        }
       }
       &__nav {
         &-list {
