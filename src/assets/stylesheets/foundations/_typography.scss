@@ -206,6 +206,13 @@
 .content-image {
   margin: 0;
   &--border {
-    border: 1px solid _.get-colour('border.light');
+    border: 1px solid _.get-colour('border.default');
+  }
+  &--spaced-b {
+    margin-bottom: 1rem;
+  }
+  &--rounded {
+    border-radius: 0.15em;
+    overflow: hidden;
   }
 }

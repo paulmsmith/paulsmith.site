@@ -16,7 +16,7 @@ $border-declaration: 2px solid _.get-colour('border.dark');
 .header {
   &--global {
     border-bottom: $border-declaration;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     padding: 1.25rem 0 1rem;
     .header {
       &__brand {

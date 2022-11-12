@@ -21,13 +21,13 @@
       {% if pagination.href.previous %}
         <li class="c-post-navigation__item c-post-navigation__item--prev">
           <div class="c-post-navigation__item__label"><span aria-hidden="true">← </span>Previous </div>
-          <a href="{{pagination.href.previous}}">{{ "Previous page" | safe }}</a>
+          <a href="{{pagination.href.previous}}">{{ layoutData.pagination.prev.text | d("Previous page") | safe }}</a>
         </li>
       {% endif %}
       {% if pagination.href.next %}
         <li class="c-post-navigation__item c-post-navigation__item--next">
           <div class="c-post-navigation__item__label">Next<span aria-hidden="true"> →</span></div>
-          <a href="{{pagination.href.next}}">{{ "Next page" | safe }}</a>
+          <a href="{{pagination.href.next}}">{{ layoutData.pagination.next.text | d("Next page") | safe }}</a>
         </li>
       {% endif %}
     </ul>

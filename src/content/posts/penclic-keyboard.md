@@ -99,14 +99,14 @@ My list of things I need much more quickly led me to what I'm typing on right no
   imagePath: 'content/penclic-keyboard-charging.jpeg',
   alt: 'My new Penclic keyboard on the desk charging with the cable plugged in, next to my Apple magic trackpad',
   lazyload: true,
-  classes: 'content-image content-image--border'
+  classes: 'content-image content-image--border content-image--spaced-b'
 } %}
 
 {% imgr {
   imagePath: 'content/penclic-keyboard-keys.jpeg',
   alt: 'A close up of the keys on the keyboard, showing the indented and raise key surfaces',
   lazyload: true,
-  classes: 'content-image content-image--border'
+  classes: 'content-image content-image--border content-image--spaced-b content-image--rounded'
 } %}
 
 {% imgr {

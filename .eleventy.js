@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dump', require('./lib/filters/dump'))
   eleventyConfig.addFilter('find', require('./lib/filters/find'))
   eleventyConfig.addFilter('padstart', require('./lib/filters/padstart'))
+  eleventyConfig.addFilter('weekdate', require('./lib/filters/weekdates'))
 
 
   // Filter source file names using a glob

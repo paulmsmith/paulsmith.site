@@ -21,9 +21,9 @@ $_thiscolour: _.get-colour('border.dark');
   .c-sectionhead__heading-1 {
     margin-bottom: .25em;
     line-height: 1;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: 'font-a';
-    letter-spacing: -.045em;
+    letter-spacing: -.035em;
   }
   .c-sectionhead__strapline {
     color: #666;
@@ -32,20 +32,22 @@ $_thiscolour: _.get-colour('border.dark');
     font-size: 1rem;
     margin-bottom: 0.25em;
     padding: 0.25em;
+    letter-spacing: 0;
   }
   .c-sectionhead__note {
     font-family: 'Dank mono', 'Incosolata', monospace;
     font-size: 0.6rem;
     border-radius: 3px;
     display: inline-block;
-    padding: 0.25em .5em;
+    // padding: 0.25em .5em;
     line-height: 1.2;
-    border: 2px solid $_thiscolour;
+    // border: 2px solid $_thiscolour;
     color: $_thiscolour;
     @include mq($from: large) {
-      position: absolute;
-      top: -1em;
-      right: 0;
+      // position: absolute;
+      // top: -2em;
+      // left: 50%;
+      display: none;
     }
   }
   abbr {
