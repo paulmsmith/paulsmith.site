@@ -51,8 +51,18 @@ eleventyComputed:
     {%- for item in collections.weeknotes -%}
       {% if (loop.index <= entryCount.select) %}
       <li class="list__item">
-        <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
-        <a href="{{ item.url }}" class="list__item-link">{{ item.data.title }}</a>
+        {# <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
+        ldkldk
+        <a href="{{ item.url }}" class="list__item-link">{{ item.data.title }}</a> #}
+        <div class="list__item-datetime">
+          S{{ item.data.weeknote.season }}E{{ item.data.weeknote.episode }}
+        </div>
+        <a href="{{ item.url }}" class="list__item-link">
+          <time datetime="{{ item.date | date }}">
+            {{ item.date | weekdate | date('dd MMM') }} &ndash;
+            {{ item.date | weekdate(true) | date('dd MMM') }} {{ item.date | date('yyyy') }}
+          </time>
+        </a>
       </li>
       {% endif %}
     {%- endfor -%}
