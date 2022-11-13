@@ -5,7 +5,7 @@ const cloudinaryKey = process.env.cloudinaryKey
 module.exports = function (eleventyConfig) {
 
   // add transforms
-  if (node_env == 'development') {
+  if (node_env == 'production') {
     eleventyConfig.addTransform('htmlmin', require('./lib/transforms/html-min-transform'));
   }
 
