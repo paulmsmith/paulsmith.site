@@ -108,7 +108,7 @@
       ? document.body.className + ' js-enabled'
       : 'js-enabled');
   </script>
-  {%- if currentEnv == 'production' -%}
+  {%- if node_env == 'production' -%}
     <script async defer data-domain="paulsmith.site" src="https://loggychops.paulsmith.site/js/index.js"></script>
   {%- endif -%}
 </html>
