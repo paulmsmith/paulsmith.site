@@ -3,6 +3,12 @@ const node_env = process.env.NODE_ENV
 const cloudinaryKey = process.env.cloudinaryKey
 
 module.exports = function (eleventyConfig) {
+
+  // add transforms
+  if (node_env == 'development') {
+    eleventyConfig.addTransform('htmlmin', require('./lib/transforms/html-min-transform'));
+  }
+
   eleventyConfig.addGlobalData('node_env', node_env)
   eleventyConfig.addGlobalData('isDev',node_env == 'development' ? true : false)
   eleventyConfig.addGlobalData('cloudinaryKey',cloudinaryKey)
