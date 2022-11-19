@@ -43,7 +43,11 @@
       <meta property="og:description" name="description" content="{{ meta_description }}">
       <meta property="og:url" content="{{ page.url }}">
       <meta property="og:url" content="https://paulsmith.site" />
-      <meta property="og:image" content="https://paulsmith.site/assets/images/{{ social_image | d('meta/og_image.jpg' )}}" />
+      {% if social_image_url %}
+        <meta property="og:image" content="{{ social_image_url )}}" />
+      {% else %}
+        <meta property="og:image" content="{{ social_image_path | d('https://paulsmith.site/assets/images/') }}{{ social_image | d('meta/og_image.jpg' )}}" />
+      {% endif %}
       <!-- twitter card meta -->
       <meta name="twitter:card" content="summary">
       <meta name="twitter:site" content="paulmsmith">
