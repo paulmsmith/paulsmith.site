@@ -134,7 +134,7 @@
 }
 
 .heading {
-  font-family: 'font-a';
+  @extend %displaycopy;
   &--toc {
     // font-weight: normal;
     font-size: .85rem;
