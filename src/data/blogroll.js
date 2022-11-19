@@ -62,7 +62,7 @@ module.exports = [
   {
     text: 'Andrew Duckworth',
     url: 'https://grillopress.github.io/',
-    description: 'Andrew is a lead designer who writes well about design.'
+    description: 'Andrew is a lead designer who writes jolly well about design.'
   },
   {
     text: 'Cathy Dutton',
