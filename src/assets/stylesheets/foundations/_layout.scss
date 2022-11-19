@@ -50,9 +50,16 @@ $border-declaration: 2px solid _.get-colour('border.dark');
           margin: 0;
           padding: 0;
           display: flex;
-          gap: 1em;
+          flex-wrap: wrap;
+          gap: .5em 1em;
+          @include _.mq($until: medium) {
+            gap: .5em .7em;
+          }
           &__item {
             display: inline-block;
+            @include _.mq($until: medium) {
+              font-size: .9em;
+            }
           }
         }
       }

@@ -80,7 +80,8 @@ module.exports = function (eleventyConfig) {
       input: 'src',
       output: 'public',
       includes: 'templates',
-      layouts: 'templates/layouts'
+      layouts: 'templates/layouts',
+      data: 'data'
     },
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
