@@ -101,6 +101,9 @@
         height: auto;
       }
       margin: 0;
+      & + figure {
+        margin-top: 1em;
+      }
     }
   }
 
@@ -142,7 +145,7 @@
 }
 
 .heading-title {
-  font-family: 'font-a';
+  @extend %displaycopy;
   a {
     text-decoration: none;
     &:hover {
