@@ -1,0 +1,26 @@
+---
+title: Blogroll
+parmalink: '/blogroll/index.html'
+social_image: 'blogroll.jpg'
+social_description: 'A list of other sites that I read, follow or recommend. In alphabetical order.'
+---
+{% extends "layouts/page.njk" %}
+
+{% block main %}
+{% if blogroll and not hide_blogroll %}
+<div class="c-aside c-aside--ribbed">
+    <h2 class="heading">Blogroll</h2>
+    <p>A list of other sites that I read, follow or recommend. In alphabetical order.</p>
+    <ul class="list list--links list--links-aside">
+      {% for blogitem in blogroll | sort('text') %}
+        <li>
+          <h3><a href="{{ blogitem.url }}">{{ blogitem.text }}</a></h3>
+          {% if blogitem.description %}
+            <p>{{ blogitem.description }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock %}

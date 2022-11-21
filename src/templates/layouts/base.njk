@@ -6,13 +6,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
+    <title>{{ title }} - @paulmsmith</title>
     {% block head %}
       <link href="/assets/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
       {% block linktags %}{% endblock %}
       <meta property="og:title" content="{{ title }}">
       {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-      <meta property="og:image" content="/assets/images/opengraph-image.png">
+      {% for font in [
+        'font-b-bold',
+        'font-b-bolditalic',
+        'font-b-regular',
+        'font-a-regular',
+        'font-a-semibold'
+      ] %}
+        <link rel="preload" as="font" type="font/woff" href="/assets/fonts/{{ font }}.woff" crossorigin="anonymous">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/{{ font }}.woff2" crossorigin="anonymous">
+      {% endfor %}
+
+      {%- block metatags -%}
+      {%- if (isDev == false) and (isHomepage) -%}
+        <link rel="canonical" href="https://paulsmith.site/">
+      {%- endif -%}
+      <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+      <link rel="manifest" href="/assets/images/site.webmanifest">
+      <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+      <meta name="msapplication-TileColor" content="#333333">
+      <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+      <!-- open graph data -->
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Paul Smith">
+      <meta property="og:title" content="{{ title }}">
+      <meta property="og:description" name="description" content="{{ meta_description }}">
+      <meta property="og:url" content="{{ page.url }}">
+      <meta property="og:url" content="https://paulsmith.site">
+      {% if social_image_url %}
+        <meta property="og:image" content="{{ social_image_url }}">
+      {% else %}
+        <meta property="og:image" content="{{ social_image_path | d('https://paulsmith.site/assets/images/') }}{{ social_image | d('meta/og_image.jpg') }}">
+      {% endif %}
+      <!-- twitter card meta -->
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="paulmsmith">
+      <meta name="twitter:title" content="{{ title }}">
+      <meta name="twitter:description" content="{{ meta_description }}">
+      <meta name="twitter:image:alt" content="Paul Smith's profile picture.">
+      {%- endblock -%}
+      {% if feed %}
+        <link rel="alternate" type="application/atom+xml" href="{{ app.url }}{{ atom.url }}" />
+      {% endif %}
+
     {% endblock %}
   </head>
   <body>
@@ -20,22 +66,26 @@
     {% block masthead %}
       <div class="l-contain l-content-width">
         <header class="header header--global" id="page-header">
-          <div class="header__content header__content--primary">
-            <p>
-              <a href="/"><img src="/assets/images/logo2.svg" alt="" style="width: 200px;"></a>
-            </p>
-            <nav class="header__nav">
-              <ul class="header__nav-list">
-                {# <li class="header__nav-list__item"><a href="/" class="header__nav-list__link">Home</a></li> #}
-                <li class="header__nav-list__item"><a href="/about/" class="header__nav-list__link">About</a></li>
-                <li class="header__nav-list__item"><a href="/writing/" class="header__nav-list__link">Writing</a></li>
-                <li class="header__nav-list__item"><a href="/weeknotes/" class="header__nav-list__link">Weeknotes</a></li>
-              </ul>
-            </nav>
+          <div class="header__brand">
+            {% imgr {
+                imagePath: 'paul.jpg',
+                alt: '',
+                width: '240',
+                height: '240',
+                quality: '90',
+                classes: 'header__thumbnail'
+              }
+            %}
+            <a href="/"><img src="/assets/images/logo2.svg" width="200" height="51" alt="Paul Smith" style="width: 200px; height: auto;"></a>
           </div>
-          <div class="header__content header__content--secondary">
-            <img src="/assets/images/paul.jpg" alt="" class="header__thumbnail">
-          </div>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-list__item"><a href="/about/" class="header__nav-list__link">About</a></li>
+              <li class="header__nav-list__item"><a href="/writing/" class="header__nav-list__link">Writing</a></li>
+              <li class="header__nav-list__item"><a href="/weeknotes/" class="header__nav-list__link">Weeknotes</a></li>
+              <li class="header__nav-list__item"><a href="/blogroll/" class="header__nav-list__link">Blogroll</a></li>
+            </ul>
+          </nav>
         </header>
       </div>
     {% endblock %}
@@ -50,7 +100,7 @@
       <footer class="footer footer--global">
         <div class="footer__primary">
           <p class="u-mb-0">&copy; Paul Smith</p>
-          <p class="u-mt-0">Hand coded in Manchester, England <img src="/assets/images/mcr_bee_paulsmith.svg" alt="Symbol of Manchester" class="u-icon u-icon--inline u-space u-space--left" width="30"></p>
+          <p class="u-mt-0">Made in Manchester, England <img src="/assets/images/mcr_bee_paulsmith.svg" alt="Symbol of Manchester" class="u-icon u-icon--inline u-space u-space--left" width="22" height="17"></p>
         </div>
       </footer>
       <!-- /.footer--global -->
@@ -64,7 +114,7 @@
       ? document.body.className + ' js-enabled'
       : 'js-enabled');
   </script>
-  {%- if currentEnv == 'production' -%}
+  {%- if node_env == 'production' -%}
     <script async defer data-domain="paulsmith.site" src="https://loggychops.paulsmith.site/js/index.js"></script>
   {%- endif -%}
 </html>

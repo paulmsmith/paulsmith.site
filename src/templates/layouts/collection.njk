@@ -1,5 +1,4 @@
 {% extends "layouts/base.njk" %}
-
 {% block main %}
 
   <h1 class="heading-title heading-title--separated">{{ title }}</h1>
@@ -7,9 +6,23 @@
     <p>Page {{ pagination.pageNumber + 1 }}</p>
   {% endif %}
 
-  <ul class="list list--spaced">
+  <ul class="list list--entries list--spaced-l">
     {%- for item in collectionItems %}
-    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {% if pagination.data == "collections.weeknotes" %}
+      <li>
+         <div class="list__item-datetime">
+          S{{ item.data.weeknote.season }}E{{ item.data.weeknote.episode }}
+        </div>
+        <a href="{{ item.url }}" class="list__item-link">
+          <time datetime="{{ item.date | date }}">
+            {{ item.date | weekdate | date('dd MMM') }} &ndash;
+            {{ item.date | weekdate(true) | date('dd MMM') }} {{ item.date | date('yyyy') }}
+          </time>
+        </a>
+      </li>
+    {% else%}
+      <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+    {% endif %}
     {%- endfor %}
   </ul>
 
@@ -21,18 +34,16 @@
       {% if pagination.href.previous %}
         <li class="c-post-navigation__item c-post-navigation__item--prev">
           <div class="c-post-navigation__item__label"><span aria-hidden="true">← </span>Previous </div>
-          <a href="{{pagination.href.previous}}">{{ "Previous page" | safe }}</a>
+          <a href="{{pagination.href.previous}}">{{ layoutData.pagination.prev.text | d("Previous page") | safe }}</a>
         </li>
       {% endif %}
       {% if pagination.href.next %}
         <li class="c-post-navigation__item c-post-navigation__item--next">
           <div class="c-post-navigation__item__label">Next<span aria-hidden="true"> →</span></div>
-          <a href="{{pagination.href.next}}">{{ "Next page" | safe }}</a>
+          <a href="{{pagination.href.next}}">{{ layoutData.pagination.next.text | d("Next page") | safe }}</a>
         </li>
       {% endif %}
     </ul>
 
  {% endif %}
-
-
 {% endblock %}

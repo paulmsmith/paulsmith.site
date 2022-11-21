@@ -1,9 +1,17 @@
 ---
 title: Weeknotes
 layout: 'collection.njk'
+feed:
+  url: '/weeknotes/feed.xml'
 pagination:
   data: collections.weeknotes
-  size: 5
+  size: 8
   alias: collectionItems
 permalink: "{{ page.fileSlug | slug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/index.html{% endif %}"
+layoutData:
+  pagination:
+    prev:
+      text: Newer weeknotes
+    next:
+      text: Older weeknotes
 ---

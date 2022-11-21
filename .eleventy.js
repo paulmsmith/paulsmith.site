@@ -1,17 +1,27 @@
 require('dotenv').config()
-const node_env = process.env.NODE_ENV;
+const node_env = process.env.NODE_ENV
+const cloudinaryKey = process.env.cloudinaryKey
 
 module.exports = function (eleventyConfig) {
+
+  // add transforms
+  if (node_env == 'production') {
+    eleventyConfig.addTransform('htmlmin', require('./lib/transforms/html-min-transform'));
+  }
+
   eleventyConfig.addGlobalData('node_env', node_env)
   eleventyConfig.addGlobalData('isDev',node_env == 'development' ? true : false)
+  eleventyConfig.addGlobalData('cloudinaryKey',cloudinaryKey)
 
   eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'))
 
+  // shortcodes
   eleventyConfig.addShortcode('imgr',require('./lib/shortcodes/cloudinaryimage'))
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date'))
@@ -25,6 +35,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dump', require('./lib/filters/dump'))
   eleventyConfig.addFilter('find', require('./lib/filters/find'))
   eleventyConfig.addFilter('padstart', require('./lib/filters/padstart'))
+  eleventyConfig.addFilter('weekdate', require('./lib/filters/weekdates'))
+
 
   // Filter source file names using a glob
   eleventyConfig.addCollection('weeknotes', function (collectionApi) {
@@ -69,7 +81,8 @@ module.exports = function (eleventyConfig) {
       input: 'src',
       output: 'public',
       includes: 'templates',
-      layouts: 'templates/layouts'
+      layouts: 'templates/layouts',
+      data: 'data'
     },
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',

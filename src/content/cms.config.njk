@@ -8,14 +8,26 @@ backend:
   name: github
   branch: main
   repo: paulmsmith/paulsmith.site # cms repo
-  base_url: https://ps-cms-oauth-service.herokuapp.com # OAuth server
+  base_url: https://ps-cms-oauth.vercel.app # OAuth server
+  # base_url: https://ps-cms-oauth-service.herokuapp.com # OAuth server
 # when true will assume needs netlify-cms-proxy-server running: npx netlify-cms-proxy-server
 local_backend: {% if node_env == "development" %}true{% else %}false{% endif %}
-logo_url: /assets/images/logo.svg
+logo_url: /assets/images/logo2.svg
 public_folder: /assets/images/uploads
-media_folder: app/assets/images/uploads
+media_folder: src/assets/images/uploads
 site_url: {{ siteDisplayURL }}
 display_url: {{ siteDisplayURL }}
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: paulmsmith
+    api_key: {{ cloudinaryKey }}
+    sources: local
+    default_transformations:
+      - - fetch_format: auto
+          width: 960
+          quality: auto
+          crop: scale
 collections:
   - name: "weeknotes"
     label: "Weeknotes"
@@ -34,5 +46,15 @@ collections:
         fields:
           - {label: "Season", name: "season", widget: "string"}
           - {label: "Episode", name: "episode", widget: "string"}
+      - { label: "Social description", name: "social_description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "writing"
+    label: "Writing"
+    label_singular: "Post"
+    folder: "src/content/posts"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", date_format: "DD.MM.YYYY"}
       - { label: "Social description", name: "social_description", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
