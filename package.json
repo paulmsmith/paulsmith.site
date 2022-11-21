@@ -51,7 +51,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@toycode/markdown-it-class": "^1.2.4",
     "accessible-autocomplete": "^2.0.3",
-    "ansi-html": "^0.0.7",
+    "ansi-html": "^0.0.9",
     "chokidar-cli": "^3.0.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^16.0.0",
