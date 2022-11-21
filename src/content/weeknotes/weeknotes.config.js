@@ -1,3 +1,6 @@
 module.exports = {
-  layout: 'weeknote.njk'
+  layout: 'weeknote.njk',
+  feed: {
+    url: '/weeknotes/feed.xml'
+  }
 }

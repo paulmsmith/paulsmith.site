@@ -1,5 +1,6 @@
 module.exports = {
-  productName: 'Site name',
+  productName: 'Paul Smith',
+  url: 'https://paulsmith.site',
   navigation: {
     items: [
       {

@@ -55,6 +55,9 @@
       <meta name="twitter:description" content="{{ meta_description }}">
       <meta name="twitter:image:alt" content="Paul Smith's profile picture.">
       {%- endblock -%}
+      {% if feed %}
+        <link rel="alternate" type="application/atom+xml" href="{{ app.url }}{{ atom.url }}" />
+      {% endif %}
 
     {% endblock %}
   </head>
