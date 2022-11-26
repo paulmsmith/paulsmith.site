@@ -4,19 +4,6 @@
 {%- set previousPost = collections.posts | getNextCollectionItem(page) %}
 {%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
 
-{% block linktags %}
-  <script>
-    window.addEventListener('load', () => {
-      let link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = "/assets/stylesheets/syntax.css";
-      document.head.appendChild(link)
-    })
-  </script>
-  <noscript><link href="/assets/stylesheets/syntax.css" media="all" rel="stylesheet" type="text/css"></noscript>
-{% endblock %}
-
 {% block main %}
 
   <div class="prose">
@@ -72,4 +59,17 @@
       {% endif %}
     </ul>
   {% endif %}
+{% endblock %}
+
+{% block before_closing_html %}
+  <script>
+    window.addEventListener('load', () => {
+      let link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = "/assets/stylesheets/syntax.css";
+      document.head.appendChild(link)
+    })
+  </script>
+  <noscript><link href="/assets/stylesheets/syntax.css" media="all" rel="stylesheet" type="text/css"></noscript>
 {% endblock %}

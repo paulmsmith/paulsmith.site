@@ -117,4 +117,5 @@
   {%- if node_env == 'production' -%}
     <script async defer data-domain="paulsmith.site" src="https://loggychops.paulsmith.site/js/index.js"></script>
   {%- endif -%}
+  {% block before_closing_html %}{% endblock %}
 </html>
