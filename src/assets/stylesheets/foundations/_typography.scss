@@ -171,26 +171,26 @@
 
 }
 
-.prose--weeknote {
-  ul {
+.prose--weeknotes {
+  ul:not([class]) {
     padding: 0 1em;
     list-style-type: '– ';
-  }
-  li {
-    ul {
-      list-style-type: '- ';
-      margin-bottom: 1.5em;
-    }
     li {
-      margin: 0.5em 0;
-      font-size: 0.925em;
+      ul {
+        list-style-type: '- ';
+        margin-bottom: 1.5em;
+      }
+      li {
+        margin: 0.5em 0;
+        font-size: 0.925em;
+      }
+      p {
+        margin: 0.75em 0;
+      }
+      margin-bottom: 1.75em;
     }
-    p {
-      margin: 0.75em 0;
-    }
-    margin-bottom: 1em;
   }
-  h2 {
+  h2:not([class]) {
     margin: 1em 0 1em;
     &:first-child {
       margin-top: 0.5em;

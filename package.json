@@ -39,7 +39,8 @@
     "watch": "npm-run-all --parallel --race watch:*",
     "prestart": "npm run build",
     "start": "NODE_ENV=development npm run watch",
-    "preview": "NODE_ENV=production npm run watch"
+    "preview": "NODE_ENV=production npm run watch",
+    "cms": "npx netlify-cms-proxy-server"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",

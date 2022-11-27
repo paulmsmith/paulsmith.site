@@ -6,7 +6,7 @@
 
 {% block main %}
 
-  <div class="prose">
+  <div class="prose{{ (' prose--' + prosemodifier) if prosemodifier else '' }}">
     {{ content | markdown | safe }}
   </div>
 
