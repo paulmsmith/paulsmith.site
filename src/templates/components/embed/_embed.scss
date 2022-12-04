@@ -1,0 +1,31 @@
+@use '../../../assets/stylesheets/abstracts/' as _;
+@use 'sass:math';
+
+$tweet-bg-colour: rgba(_.get-colour('border.default'),0.5);
+
+.c-embed {
+  &--tweet {
+    border-radius: .15em;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    > div {
+      border: 2px solid _.get-colour('border.dark');
+      border-radius: .55em;
+      overflow: hidden;
+      box-shadow: 0px 3px 30px rgba(_.get-colour('border.default'),0.35);
+    }
+  }
+  &--tweet-alt {
+    $size-1: 35px;
+    $size-2: 17.5px;
+    background: radial-gradient(circle, transparent 20%, #F9FAFF 20%, #F9FAFF 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #F9FAFF 20%, #F9FAFF 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient($tweet-bg-colour 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, $tweet-bg-colour 1.4000000000000001px, #F9FAFF 1.4000000000000001px) -0.7000000000000001px 0;
+    background-size: $size-1 $size-1, $size-1 $size-1, $size-2 $size-2, $size-2 $size-2;
+  }
+  &--tweet-alt-2 {
+    background-color: _.get-colour('page.background');
+    background-size: .5em .5em;
+    background-image: repeating-linear-gradient(45deg, rgba($tweet-bg-colour,0.2) 0, $tweet-bg-colour 1px, rgba(_.get-colour('page.background'),0.5) 0, rgba(_.get-colour('page.background'),0.5) 50%);
+  }
+
+}

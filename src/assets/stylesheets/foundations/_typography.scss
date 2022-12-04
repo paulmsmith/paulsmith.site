@@ -187,14 +187,11 @@
       p {
         margin: 0.75em 0;
       }
-      margin-bottom: 1.75em;
+      margin-bottom: 1em;
     }
   }
   h2:not([class]) {
-    margin: 1em 0 1em;
-    &:first-child {
-      margin-top: 0.5em;
-    }
+    margin: 1em 0 .5em;
   }
 }
 

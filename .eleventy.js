@@ -22,6 +22,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
+  eleventyConfig.addPlugin(require("eleventy-plugin-embed-twitter"), {
+    cacheText: true,
+    width: 400,
+    embedClass: 'c-embed c-embed--tweet'
+  })
 
   // Filters
   eleventyConfig.addFilter('date', require('./lib/filters/date'))
