@@ -178,20 +178,25 @@
     li {
       ul {
         list-style-type: '- ';
-        margin-bottom: 1.5em;
+        margin-bottom: 1em;
       }
       li {
-        margin: 0.5em 0;
+        margin: 0.5em 0 0;
         font-size: 0.925em;
       }
       p {
         margin: 0.75em 0;
       }
-      margin-bottom: 1em;
+      margin: 1em 0;
     }
   }
   h2:not([class]) {
     margin: 1em 0 .5em;
+  }
+  h3:not([class]) {
+    font-family: 'font-b';
+    font-size: 1em;
+    letter-spacing: 0;
   }
 }
 
