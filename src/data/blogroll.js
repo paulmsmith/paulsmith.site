@@ -15,6 +15,11 @@ module.exports = [
     description: 'A frontend development and accessibility expert. As well as a long time friend from our days writing code together for a large digital agency in Manchester.'
   },
   {
+    text: 'Steve Messer',
+    url: 'https://visitmy.website/tag/weeknotes/',
+    description: 'Product manager. Web enthusiast, working in the open.'
+  },
+  {
     text: 'Giles Turnbull',
     url: 'https://gilest.org/',
     description: 'An inspiration to me and many others. Author of the agile comms handbook. Giles writes a lovely hand-coded blog.'
