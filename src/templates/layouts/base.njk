@@ -40,7 +40,7 @@
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Paul Smith">
       <meta property="og:title" content="{{ title }}">
-      <meta property="og:description" name="description" content="{{ meta_description }}">
+      <meta property="og:description" name="description" content="{{ meta_description | d(social_description) }}">
       <meta property="og:url" content="{{ page.url }}">
       <meta property="og:url" content="https://paulsmith.site">
       {% if social_image_url %}
