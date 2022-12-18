@@ -10,6 +10,11 @@ module.exports = [
     description: 'Incredibly experienced and talented cloud engineer I\'ve been lucky enough to work with. Writes a brilliant blog.'
   },
   {
+    text: 'Tom Dolan',
+    url: 'https://www.leaningforward.com/blog/',
+    description: 'Notes on Content Strategy, Product Development and Life.'
+  },
+  {
     text: 'Ben Holliday',
     url: 'http://benholliday.com/',
     description: 'Chief Designer at TPXimpact, my old gaffer at DWP Digital, a friend and mentor.'
