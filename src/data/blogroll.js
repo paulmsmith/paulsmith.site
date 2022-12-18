@@ -5,6 +5,11 @@ module.exports = [
     description: 'An interaction designer who makes useful, usable and accessible services, that meet users’ needs.'
   },
   {
+    text: 'Adrian Hesketh',
+    url: 'https://adrianhesketh.com/',
+    description: 'Incredibly experienced and talented cloud engineer I\'ve been lucky enough to work with. Writes a brilliant blog.'
+  },
+  {
     text: 'Ben Holliday',
     url: 'http://benholliday.com/',
     description: 'Chief Designer at TPXimpact, my old gaffer at DWP Digital, a friend and mentor.'

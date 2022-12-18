@@ -21,7 +21,7 @@
   font-feature-settings: 'kern', 'liga', 'clig', 'onum', 'pnum';
   text-underline-position: under;
   font-size: _.$base-font-size;
-  font-size: calc(_.$base-font-size + 0.2vw);
+  font-size: calc(_.$base-font-size + 0.125vw);
   line-height: 1.275;
   box-sizing: border-box;
   font-family: 'font-b', Georgia, 'Times New Roman', Times, serif;

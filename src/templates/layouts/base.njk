@@ -12,7 +12,7 @@
       {% block linktags %}{% endblock %}
       <meta property="og:title" content="{{ title }}">
       {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-      {% for font in [
+      {# {% for font in [
         'font-b-bold',
         'font-b-bolditalic',
         'font-b-regular',
@@ -21,7 +21,7 @@
       ] %}
         <link rel="preload" as="font" type="font/woff" href="/assets/fonts/{{ font }}.woff" crossorigin="anonymous">
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/{{ font }}.woff2" crossorigin="anonymous">
-      {% endfor %}
+      {% endfor %} #}
 
       {%- block metatags -%}
       {%- if (isDev == false) and (isHomepage) -%}
