@@ -1,8 +1,18 @@
 require('dotenv').config()
+const Nunjucks = require('nunjucks');
+const WithExtension = require('@allmarkedup/nunjucks-with');
 const node_env = process.env.NODE_ENV
 const cloudinaryKey = process.env.cloudinaryKey
 
+let nunjucksEnvironment = new Nunjucks.Environment(
+  new Nunjucks.FileSystemLoader("src/templates")
+);
+
+nunjucksEnvironment.addExtension('WithExtension', new WithExtension());
+
 module.exports = function (eleventyConfig) {
+
+  eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
   // add transforms
   if (node_env == 'production') {
@@ -41,7 +51,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('find', require('./lib/filters/find'))
   eleventyConfig.addFilter('padstart', require('./lib/filters/padstart'))
   eleventyConfig.addFilter('weekdate', require('./lib/filters/weekdates'))
-
 
   // Filter source file names using a glob
   eleventyConfig.addCollection('weeknotes', function (collectionApi) {

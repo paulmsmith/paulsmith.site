@@ -1,0 +1,73 @@
+@use '../../../assets/stylesheets/abstracts/' as _;
+
+.c-tlds {
+  p {
+    font-family: 'font-b';
+  }
+  // @include padding(0.5em 0 0.5em 0);
+}
+
+.c-tlds-item {
+  // @include margin(1em 0 2em);
+  &__content {
+    margin: 0;
+  }
+  &__title,
+  &__subtitle {
+    font-family: 'font-a';
+    margin: 0;
+  }
+  &__image {
+    display: none;
+  }
+}
+
+@include _.mq($from: medium) {
+  .c-tlds-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-content: stretch;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px dotted _.get-colour('border.light');
+    &__content {
+      flex-grow: 2;
+      width: 70%;
+    }
+    &__title {
+      flex-grow: 1;
+      width: 30%;
+    }
+    &__title,
+    &__subtitle {
+      margin: 0;
+    }
+    &__title {
+      font-size: 1rem;
+    }
+    &__image {
+      display: block;
+      margin: 0;
+      figure {
+        margin: 0;
+        display: inline-block;
+      }
+      img {
+        max-width: 55%;
+        display: inline-block;
+      }
+    }
+  }
+  .date-span {
+    font-size: .9em;
+    margin: 0 0 1em 0;
+    > span {
+      margin: 0;
+    }
+    &__divide {
+      font-size: 0.8em;
+      color: #666;
+    }
+  }
+}
