@@ -1,6 +1,10 @@
-{% extends "layouts/post.njk" %}
-
+{%- set currentPost = collections.weeknotes | getCollectionItem(page) -%}
+{%- set previousPost = collections.weeknotes | getNextCollectionItem(page) -%}
+{%- set nextPost = collections.weeknotes | getPreviousCollectionItem(page) -%}
+{% set currentLayout = 'weeknote' %}
 {% set prosemodifier = 'weeknotes' %}
+
+{% extends "layouts/post.njk" %}
 
 {% block section_head %}
 <div class="c-sectionhead c-sectionhead--weeknote">

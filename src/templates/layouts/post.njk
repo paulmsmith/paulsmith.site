@@ -1,8 +1,10 @@
+{% if not currentLayout %}
+  {% set currentPost = collections.posts | getCollectionItem(page) %}
+  {%- set previousPost = collections.posts | getNextCollectionItem(page) %}
+  {%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
+{% endif %}
+{% if not currentLayout %}{% set currentLayout = 'post' %}{% endif %}
 {% extends "layouts/base.njk" %}
-
-{% set currentPost = collections.posts | getCollectionItem(page) %}
-{%- set previousPost = collections.posts | getNextCollectionItem(page) %}
-{%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
 
 {% block main %}
 

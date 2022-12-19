@@ -7,7 +7,8 @@
 ) {
   @font-face {
     font-family: $font-family;
-    src: url('#{$font-file}.woff2') format('woff2');
+    src: url('#{$font-file}.woff') format('woff'),
+    url('#{$font-file}.woff2') format('woff2');
     font-weight: $font-weight;
     font-display: $font-display;
     @if $font-style {
