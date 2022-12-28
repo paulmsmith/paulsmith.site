@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
 
   // shortcodes
   eleventyConfig.addShortcode('imgr',require('./lib/shortcodes/cloudinaryimage'))
+  eleventyConfig.addShortcode('video',require('./lib/shortcodes/video'))
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))

@@ -59,8 +59,16 @@
     margin: 0;
   }
 
-  img:not([class]) {
+  img:not([class]),
+  video:not([class]) {
     max-width: 100%;
+  }
+
+  video:not([class]) {
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #333;
+    height: auto;
   }
 
   ul:not([class]) {
@@ -68,7 +76,11 @@
     padding: 0 0.5em;
     li {
       padding-left: .5em;
-      margin-bottom: .75em;
+      margin-bottom: .25em;
+    }
+    margin-bottom: 1.5em;
+    ul {
+      margin: .5em 0;
     }
   }
 
