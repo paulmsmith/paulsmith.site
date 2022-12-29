@@ -141,4 +141,5 @@ At the time of writing, I have released V1.0 of the Figma file.
 
 Happy diagramming and do share any feedback or thoughts on twitter or as an issue in Github.
 
-**Get the [GOVUK Design System flow Diagram for Figma on Github](https://github.com/paulmsmith/govuk-designsystem-flow-diagram-figma).**
+- [Make a copy from the Figma community file](https://www.figma.com/community/file/1190408343174633432)
+- Get the [GOVUK Design System flow Diagram for Figma on Github](https://github.com/paulmsmith/govuk-designsystem-flow-diagram-figma).
