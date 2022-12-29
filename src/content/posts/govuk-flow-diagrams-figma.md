@@ -10,8 +10,6 @@ date: 2022-12-23
 
 A resource to help teams show the interaction design of services.
 
-<!-- [[toc]] -->
-
 **Just looking for the Figma file?** - [Skip to the download details](#where-to-download-the-govuk-flow-diagram-for-figma)
 
 ---
@@ -36,9 +34,9 @@ Flow diagrams reduce the amount of brain power (cognitive effort) required to un
 
 ## Using flow diagrams to design services
 
-Interaction designers often create a particular type of flow diagram called a "user flow diagram" (or 'user flow') to show of what happens during a user's interaction with a product or service.
+Interaction designers often create a particular type of flow diagram called a "user flow diagram" (or 'user flow') to show what happens during a user's interaction with a product or service.
 
-Flow diagrams help to make the work of facilitating and documenting decisions about services much easier by presenting us with what steps happen, when they happen, and, how they should happen.
+Flow diagrams help to make facilitating and documenting decisions about services much easier by presenting us with the steps that happen, when they happen, and how they happen.
 
 That said, flow diagrams should be created with care or they risk being more of a hindrance than a help.
 
@@ -65,21 +63,21 @@ One that has stood the test of time and is available in various formats is the '
 
 ### Why these diagrams work well
 
-I personally find this style of flow diagram for interaction design much easier to 'read'.
+I personally find this style of flow diagram for interaction design much easier to read.
 
 In the past I've heard this style called a 'wire flow' because the way they are drawn not only shows the steps in the process, but also the layout of individual screens as elements within the diagram.
 
-I think that is a key feature of these diagrams because the visual representation of the page helps people like me (a very visual learner) recall and differentiate parts of the user journey much more easily.
+Which I think is a key feature of these diagrams because the visual representation of the page helps people recall and differentiate parts of the user journey much more easily.
 
 ### Credit to the community
 
-I tried to establish [on Twitter who to credit](https://twitter.com/paulmsmith/status/1606373201788944384) for creating the original version but it found that it is the community as a whole, collaborating and sharing resources that led to this style of visual flow vocabulary.
+I tried to establish [who to credit](https://twitter.com/paulmsmith/status/1606373201788944384) for creating the original version but found that it was community as a whole, collaborating and sharing resources which led to this style of visual flow vocabulary.
 
-The [twitter thread](https://twitter.com/paulmsmith/status/1606373201788944384) was fascinating and served to remind me of why it's important to work in the open, share learning and resources because we all benefit.
+The [twitter thread](https://twitter.com/paulmsmith/status/1606373201788944384) was fascinating and served to remind me of why it's important to work in the open, share learning and resources. We all benefit when that happens.
 
 ## Adding superpowers to user-flow diagrams with Figma
 
-So hopefully the context above proves useful as we arrive at my contribution, a version of the GOVUK Design System Flow Diagrams but enhanced with the capabilities of [Figma](https://figma.com).
+So we arrive at my contribution, a version of the GOVUK Design System Flow Diagrams but enhanced with the capabilities of [Figma](https://figma.com).
 
 Figma is great for creating visuals but it combines that with simple to use tools to help designers to create interactive prototypes.
 
@@ -107,6 +105,8 @@ I've seen [versions of the the flow diagram](https://dfedigital.blog.gov.uk/2022
 - Sending or receiving an email
 - Speaking to somebody in person or on the phone
 
+In this Figma file I've added icons with optional labels which can be dragged into the flow to indicate common scenarios.
+
 {% video {
   width: '852',
   height: '480',
@@ -115,11 +115,15 @@ I've seen [versions of the the flow diagram](https://dfedigital.blog.gov.uk/2022
 
 ### Zooming in and out of flow detail
 
-Interactions can sometimes be quite complex, lots of various routes and loops depending on the scenario being depicted.
+Interactions can sometimes be quite complex, containing lots of routes and loops depending on the scenario being depicted.
 
-This leads to very long and hard to follow diagrams. I know having produced many of them.
+This leads to very long and hard to follow diagrams. Writing as somebody who has produced many of them I've wanted a way to mitigate this for quite a while until I realised that this could be achieved in a tool like Figma.
 
-Using Figma's prototyping tools. You can create flows showing different levels of detail and then link to the lower level represented as a "compressed flow" which can be drawn in a separate visual (frame in Figma).
+Using Figma's prototyping tools. You can create flows showing different levels of detail by drawing them on different frames and then linking them together.
+
+See the video here. A frame showing the high level flow contains visual representing a stack of pages, known as a 'compressed flow'.
+
+This should tell the viewer that there are steps being summarised at that point which can be explored by clicking to drill down further.
 
 {% video {
   width: '852',
