@@ -1,39 +1,47 @@
 require('dotenv').config()
-const Nunjucks = require('nunjucks');
-const WithExtension = require('@allmarkedup/nunjucks-with');
+const Nunjucks = require('nunjucks')
+const WithExtension = require('@allmarkedup/nunjucks-with')
 const node_env = process.env.NODE_ENV
 const cloudinaryKey = process.env.cloudinaryKey
 
 let nunjucksEnvironment = new Nunjucks.Environment(
-  new Nunjucks.FileSystemLoader("src/templates")
-);
+  new Nunjucks.FileSystemLoader('src/templates')
+)
 
-nunjucksEnvironment.addExtension('WithExtension', new WithExtension());
+nunjucksEnvironment.addExtension('WithExtension', new WithExtension())
 
 module.exports = function (eleventyConfig) {
-
-  eleventyConfig.setLibrary("njk", nunjucksEnvironment);
+  eleventyConfig.setLibrary('njk', nunjucksEnvironment)
 
   // add transforms
   if (node_env == 'production') {
-    eleventyConfig.addTransform('htmlmin', require('./lib/transforms/html-min-transform'));
+    eleventyConfig.addTransform(
+      'htmlmin',
+      require('./lib/transforms/html-min-transform')
+    )
   }
 
   eleventyConfig.addGlobalData('node_env', node_env)
-  eleventyConfig.addGlobalData('isDev',node_env == 'development' ? true : false)
-  eleventyConfig.addGlobalData('cloudinaryKey',cloudinaryKey)
+  eleventyConfig.addGlobalData(
+    'isDev',
+    node_env == 'development' ? true : false
+  )
+  eleventyConfig.addGlobalData('cloudinaryKey', cloudinaryKey)
 
   eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'))
 
   // shortcodes
-  eleventyConfig.addShortcode('imgr',require('./lib/shortcodes/cloudinaryimage'))
-  eleventyConfig.addShortcode('video',require('./lib/shortcodes/video'))
+  eleventyConfig.addShortcode(
+    'imgr',
+    require('./lib/shortcodes/cloudinaryimage')
+  )
+  eleventyConfig.addShortcode('video', require('./lib/shortcodes/video'))
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
-  eleventyConfig.addPlugin(require("eleventy-plugin-embed-twitter"), {
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
+  eleventyConfig.addPlugin(require('eleventy-plugin-embed-twitter'), {
     cacheText: true,
     width: 400,
     embedClass: 'c-embed c-embed--tweet'
@@ -61,9 +69,7 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addCollection('posts', function (collectionApi) {
-    return collectionApi
-      .getFilteredByGlob('./src/content/posts/*.md')
-      .reverse()
+    return collectionApi.getFilteredByGlob('./src/content/posts/*.md').reverse()
   })
 
   //   // Creates a 'collection' of guidance content but only those that are not set to be hidden
