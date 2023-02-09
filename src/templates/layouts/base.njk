@@ -12,16 +12,6 @@
       {% block linktags %}{% endblock %}
       <meta property="og:title" content="{{ title }}">
       {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-      {# {% for font in [
-        'font-b-bold',
-        'font-b-bolditalic',
-        'font-b-regular',
-        'font-a-regular',
-        'font-a-semibold'
-      ] %}
-        <link rel="preload" as="font" type="font/woff" href="/assets/fonts/{{ font }}.woff" crossorigin="anonymous">
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/{{ font }}.woff2" crossorigin="anonymous">
-      {% endfor %} #}
 
       {%- block metatags -%}
       {%- if (isDev == false) and (isHomepage) -%}
@@ -45,18 +35,20 @@
       <meta property="og:url" content="https://paulsmith.site">
       {% if social_image_url %}
         <meta property="og:image" content="{{ social_image_url }}">
+        <meta name="twitter:image" content="{{ social_image_url }}">
       {% else %}
         <meta property="og:image" content="{{ social_image_path | d('https://paulsmith.site/assets/images/') }}{{ social_image | d('meta/og_image.jpg') }}">
+        <meta name="twitter:image" content="{{ social_image_path | d('https://paulsmith.site/assets/images/') }}{{ social_image | d('meta/og_image.jpg') }}">
       {% endif %}
       <!-- twitter card meta -->
-      <meta name="twitter:card" content="summary">
+      <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="paulmsmith">
       <meta name="twitter:title" content="{{ title }}">
-      <meta name="twitter:description" content="{{ meta_description }}">
-      <meta name="twitter:image:alt" content="Paul Smith's profile picture.">
+      <meta name="twitter:description" content="{{ meta_description | d(social_description) }}">
+
       {%- endblock -%}
       {% if feed %}
-        <link rel="alternate" type="application/atom+xml" href="{{ app.url }}{{ atom.url }}" />
+        <link rel="alternate" type="application/atom+xml" href="{{ app.url }}{{ atom.url }}">
       {% endif %}
 
     {% endblock %}
