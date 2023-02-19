@@ -4,7 +4,7 @@
   {%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
 {% endif %}
 {% if not currentLayout %}{% set currentLayout = 'post' %}{% endif %}
-{% extends "layouts/base.njk" %}
+{% extends "./base.njk" %}
 
 {% block main %}
 

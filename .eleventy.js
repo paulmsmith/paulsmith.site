@@ -3,6 +3,7 @@ const Nunjucks = require('nunjucks')
 const WithExtension = require('@allmarkedup/nunjucks-with')
 const node_env = process.env.NODE_ENV
 const cloudinaryKey = process.env.cloudinaryKey
+// const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 let nunjucksEnvironment = new Nunjucks.Environment(
   new Nunjucks.FileSystemLoader('src/templates')
@@ -96,6 +97,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/assets/stylesheets/')
   eleventyConfig.addWatchTarget('./src/templates/components/')
 
+  eleventyConfig.setDataFileSuffixes([".config", ""]); // e.g. file.json and file.11tydata.json
+
+  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
+  // eleventyConfig.addPlugin(UpgradeHelper);
+
   // Config
   return {
     dir: {
@@ -108,7 +114,6 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    jsDataFileSuffix: '.config',
     templateFormats: ['njk', 'md'],
     passthroughFileCopy: true
   }
