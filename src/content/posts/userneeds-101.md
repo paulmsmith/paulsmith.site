@@ -1,7 +1,7 @@
 ---
 title: 'User needs 101'
 date: 2021-06-12
-tags: ['design', 'userneeds', 'research']
+tags: ['design', 'userneeds', 'research', 'select']
 social_description: 'Learn about user needs from the beginning'
 social_image: 'content/un101.jpg'
 ---

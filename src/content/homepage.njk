@@ -26,7 +26,7 @@ eleventyComputed:
   <!-- / .prose -->
 
   <ul class="list list--entries list--spaced">
-    {%- for item in collections.posts -%}
+    {%- for item in collections.select.reverse() -%}
       {% if (loop.index <= entryCount.select) %}
       <li class="list__item">
         <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>

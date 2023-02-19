@@ -1,6 +1,6 @@
 ---
 title: 'Design Systems — the means, not the end'
-tags: ['design systems']
+tags: ['design systems', 'select']
 original_url: 'https://medium.com/@paulmsmith/design-systems-the-means-not-the-end-fc840c21b51e'
 social_image: 'content/picnmix.jpg'
 date: 2018-10-22

@@ -1,7 +1,7 @@
 ---
 title: 'GOV.UK Design System Flow Diagrams for Figma'
 description: 'Adding superpowers to user-flow diagrams with Figma'
-tags: ['design systems', 'figma']
+tags: ['design systems', 'figma','select']
 social_image: 'content/figma-flow.jpg'
 date: 2022-12-23
 ---
