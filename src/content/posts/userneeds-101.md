@@ -204,6 +204,7 @@ If having read this and the links I've shared, you can you look at the work of y
 
 ## Additional links
 
+- [Userneeds and Business Requirements](https://medium.com/@stephen.gill/user-needs-and-business-requirements-661d80239cb4) by Stephen Gill
 - [Putting users first is not the answer to everything](https://medium.com/doteveryone/putting-users-first-is-not-the-answer-to-everything-dd05b9f11b5) <br>by Cassie Robinson
 - [The Myth of the Genius Designer
   ](https://www.nngroup.com/articles/the-myth-of-the-genius-designer/) by Jakob Nielsen
