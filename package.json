@@ -50,7 +50,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@11ty/eleventy-upgrade-help": "^2.0.5",
     "@allmarkedup/nunjucks-with": "^0.1.2",
-    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-commonjs": "^25.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@toycode/markdown-it-class": "^1.2.4",
     "accessible-autocomplete": "^2.0.3",
