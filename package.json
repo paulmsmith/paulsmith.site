@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "^16.0.0"
+    "node": "^18.0.0"
   },
   "description": "The static site generator template repo",
   "keywords": [
