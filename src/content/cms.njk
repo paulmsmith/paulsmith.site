@@ -10,9 +10,11 @@ permalink: 'admin/index.html'
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="/assets/javascripts/netlify-cms.js"></script>
+    {# <script src="/assets/javascripts/netlify-cms.js"></script> #}
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       CMS.registerPreviewStyle("/assets/stylesheets/netlify-cms-preview.css");
     </script>
+
   </body>
 </html>
