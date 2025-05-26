@@ -32,13 +32,16 @@ permalink: '/about/index.html'
   <li>Frontend Development</li>
 </ul>
 
-<p>Using these skills I have often worked as Lead Digital Designer for large public and private organisations such as <a href="https://bbc.co.uk">The BBC</a>, <a href="https://manutd.com">Manchester United</a>, <a href="https://www.gov.uk/government/organisations/department-for-work-pensions">The Department for Work and Pensions</a>, <a href="https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities">The Ministry for Housing</a>  and many high profile digital and product agencies.</p>
+<p>Using these skills I have often worked as Lead Digital Designer for large public and
+private organisations such as <a href="https://bbc.co.uk">BBC</a>,
+<a href="https://nhs.uk">NHS England</a>, <a href="https://toyota.co.uk">Toyota</a>,
+ <a href="https://www.gov.uk/government/organisations/department-for-work-pensions">DWP</a>, <a href="https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities">The Ministry for Housing</a> and many other high profile digital and product agencies.</p>
 
 <hr class="section-break section-break--dots">
 
 <h2 class="heading-title heading-title--separated">Work history</h2>
 
-<p>A brief rundown of my recent career history. Full details can be found on my <a href="https://www.linkedin.com/in/paulmichaelsmith">LinkedIn profile</a>.</p>
+<p>A brief rundown of my recent career history.</p>
 
 {{
   macro.component({
@@ -47,7 +50,24 @@ permalink: '/about/index.html'
       items: [
         {
           subtitle: {
-            text: 'The Department for Levelling Up, Housing and Communities',
+            text: 'National Health Service (NHS)',
+            url: 'https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities/about'
+          },
+          content: [
+            "I'm the lead Interaction Designer for NHS England.",
+            "My primary focus is as one of the design leads for Digital Urgent and Emergency Care working on <a href='https://111.nhs.uk'>111.nhs.uk</a>."
+          ],
+          date: {
+            from: '2024',
+            until: 'Present'
+          },
+          image: {
+            src: 'about/nhs.png'
+          }
+        },
+        {
+          subtitle: {
+            text: 'The Ministry for Housing, Communities and Local Government',
             url: 'https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities/about'
           },
           content: [
@@ -56,7 +76,7 @@ permalink: '/about/index.html'
           ],
           date: {
             from: '2021',
-            until: 'Present'
+            until: '2024'
           },
           image: {
             src: 'about/dluhc.png'
@@ -118,5 +138,7 @@ permalink: '/about/index.html'
     }
   })
 }}
+
+<p>Full details can be found on my <a href="https://www.linkedin.com/in/paulmichaelsmith">LinkedIn profile</a>.</p>
 {% endblock %}
 
