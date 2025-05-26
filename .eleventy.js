@@ -3,7 +3,7 @@ const Nunjucks = require('nunjucks')
 const WithExtension = require('@allmarkedup/nunjucks-with')
 const node_env = process.env.NODE_ENV
 const cloudinaryKey = process.env.cloudinaryKey
-// const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 let nunjucksEnvironment = new Nunjucks.Environment(
   new Nunjucks.FileSystemLoader('src/templates')
@@ -101,6 +101,8 @@ module.exports = function (eleventyConfig) {
 
   // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
   // eleventyConfig.addPlugin(UpgradeHelper);
+  // eleventyConfig.addPlugin(UpgradeHelper);
+
 
   // Config
   return {

@@ -38,7 +38,7 @@ collections:
     preview_path: {% raw %}"weeknotes/{{slug}}/"{% endraw %}
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime", date_format: "DD.MM.YYYY"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - label: "Issue"
         name: "weeknote"
         widget: "object"
@@ -55,6 +55,6 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime", date_format: "DD.MM.YYYY"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - { label: "Social description", name: "social_description", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
