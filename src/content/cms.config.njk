@@ -1,6 +1,6 @@
 ---
 layout: false
-permalink: "config.yml"
+permalink: "admin/config.yml"
 ---
 {% set siteDisplayURL = "http://localhost:8000" if isDev else "https://paulsmith.site" %}
 # Docs: https://www.netlifycms.org/docs/configuration-options/
@@ -11,8 +11,7 @@ backend:
   base_url: https://ps-cms-oauth.vercel.app # OAuth server
   # base_url: https://ps-cms-oauth-service.herokuapp.com # OAuth server
 # when true will assume needs netlify-cms-proxy-server running: npx netlify-cms-proxy-server
-{# local_backend: {% if node_env == "development" %}true{% else %}false{% endif %} #}
-local_backend: false
+local_backend: {% if node_env == "development" %}true{% else %}false{% endif %}
 logo_url: /assets/images/logo2.svg
 public_folder: /assets/images/uploads
 media_folder: src/assets/images/uploads
