@@ -30,6 +30,12 @@
       min-width: 25%;
       font-family: 'font-a';
       font-size: 0.75em;
+      margin-top: 0.5em;
+    }
+    &-summary {
+      font-size: 0.875em;
+      color: _.get-colour('palette.grey.7');
+      margin: .5em 0;
     }
   }
 }

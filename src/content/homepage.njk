@@ -56,17 +56,17 @@ eleventyComputed:
       {% if (loop.index <= entryCount.select) %}
       <li class="list__item">
         <a href="{{ item.url }}" class="list__item-link">{{ item.data.title }}</a>
+        <div class="list__item-datetime">
+          {# S{{ item.data.weeknote.season }}E{{ item.data.weeknote.episode }} #}
+            <time datetime="{{ item.date | date }}">
+          {{ item.date | weekdate | date('dd MMM') }} &ndash;
+          {{ item.date | weekdate(true) | date('dd MMM') }} {{ item.date | date('yyyy') }}
+        </time>
+        </div>
         {% set summary = item.data.summary or item.data.description or item.data.social_description %}
         {% if summary %}
           <div class="list__item-summary">{{ summary }}</div>
         {% endif %}
-        <div class="list__item-datetime">
-          S{{ item.data.weeknote.season }}E{{ item.data.weeknote.episode }}
-        </div>
-          <time datetime="{{ item.date | date }}">
-            {{ item.date | weekdate | date('dd MMM') }} &ndash;
-            {{ item.date | weekdate(true) | date('dd MMM') }} {{ item.date | date('yyyy') }}
-          </time>
       </li>
       {% endif %}
     {%- endfor -%}
