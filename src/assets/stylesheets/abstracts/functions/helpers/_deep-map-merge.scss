@@ -1,7 +1,14 @@
+@use "sass:meta";
+@use "sass:map";
+
 @function deep-map-merge ($map, $maps...) {
   $last: nth($maps, -1);
   $deep: $last == true;
-  $max: if($deep, length($maps) - 1, length($maps));
+  // Avoid deprecated Sass if() function by using control flow instead
+  $max: length($maps);
+  @if $deep {
+    $max: $max - 1;
+  }
 
   // Loop through all maps in $maps...
   @for $i from 1 through $max {
@@ -10,20 +17,20 @@
 
     // If not in deep mode, simply merge current map with map
     @if not $deep {
-      $map: map-merge($map, $current);
+      $map: map.merge($map, $current);
     }
     @else {
       // If in deep mode, loop through all tuples in current map
       @each $key, $value in $current {
 
         // If value is a nested map and same key from map is a nested map as well
-        @if type-of($value) == 'map' and type-of(map-get($map, $key)) == 'map' {
+        @if meta.type-of($value) == 'map' and meta.type-of(map.get($map, $key)) == 'map' {
           // Recursive extend
-          $value: deep-map-merge(map-get($map, $key), $value, true);
+          $value: deep-map-merge(map.get($map, $key), $value, true);
         }
 
         // Merge current tuple with map
-        $map: map-merge($map, ($key: $value));
+        $map: map.merge($map, ($key: $value));
       }
     }
   }
@@ -33,11 +40,11 @@
 @function non-destructive-map-merge($parent-map, $child-map) {
 	$result: $parent-map;
 	@each $key, $value in $child-map {
-		@if (not map-has-key($result, $key)) or (type-of(map-get($result, $key)) != type-of($value)) or (not (type-of(map-get($result, $key)) == map and type-of($value) == map)) {
-			$result: map-merge($result, ($key: $value));
+    @if (not map.has-key($result, $key)) or (meta.type-of(map.get($result, $key)) != meta.type-of($value)) or (not (meta.type-of(map.get($result, $key)) == 'map' and meta.type-of($value) == 'map')) {
+      $result: map.merge($result, ($key: $value));
 		}
 		@else {
-			$result: map-merge($result, ($key: non-destructive-map-merge(map-get($result, $key), $value)));
+      $result: map.merge($result, ($key: non-destructive-map-merge(map.get($result, $key), $value)));
 		}
 	}
 	@return $result;

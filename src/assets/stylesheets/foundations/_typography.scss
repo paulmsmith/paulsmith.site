@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:string";
 @use '../abstracts' as _;
 
 // this monstrosity loops over all the fonts in the fonts map
@@ -7,8 +8,8 @@
   @include _.generate-font-face(
     $font-family: map.get($font, 'font-family'),
     $font-file: #{_.get-font(path)}#{map.get($font, 'font-file')},
-    $font-weight: unquote(map.get($font, 'font-weight')),
-    $font-style: unquote(map.get($font, 'font-style'))
+    $font-weight: string.unquote(map.get($font, 'font-weight')),
+    $font-style: string.unquote(map.get($font, 'font-style'))
   );
   // this is to remind me of the available fonts in terminal
   // @debug '\A ================ \A New font added: \A #{map.values($font)} \A ================';
