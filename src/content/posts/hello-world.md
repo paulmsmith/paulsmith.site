@@ -4,6 +4,7 @@ date: 2021-03-24
 tags: ['blogging']
 social_description: 'A hello from me on my freshly revived blog'
 heading: 'Hello world'
+summary: Reflecting on launching this blog and choosing to publish imperfect work rather than chase perfection.
 ---
 
 The words 'Hello world' are often the first thing many programmers will instruct their applications to produce.

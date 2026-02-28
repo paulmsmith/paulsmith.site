@@ -5,6 +5,7 @@ tags: ['design','medium']
 original_url: 'https://medium.com/doing-service-design-at-the-national-lottery/prototyping-at-nlhf-705ff3b88c67'
 social_image: 'content/nlhf_prototyping_pens.jpeg'
 social_description: 'A blog post about “how we design” at the National Lottery Heritage Fund'
+summary: Describes how the National Lottery Heritage Fund team use low and high fidelity prototypes to learn quickly and design better services.
 ---
 
 This is the first in a series of blog posts about “how we design” at the [National Lottery Heritage Fund](https://heritagefund.org.uk/).

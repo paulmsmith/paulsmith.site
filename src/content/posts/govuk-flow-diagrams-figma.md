@@ -4,6 +4,7 @@ description: 'Adding superpowers to user-flow diagrams with Figma'
 tags: ['design systems', 'figma','select']
 social_image: 'content/figma-flow.jpg'
 date: 2022-12-23
+summary: Introduces a Figma version of the GOVUK Design System flow diagrams that adds powerful ways to design and prototype user journeys.
 ---
 
 # {{ title }}

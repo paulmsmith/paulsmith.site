@@ -33,6 +33,10 @@
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
+    {%- set summary = post.data.summary or post.data.description or post.data.social_description %}
+    {%- if summary %}
+    <summary>{{ summary }}</summary>
+    {%- endif %}
     <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
   {%- endfor %}

@@ -4,6 +4,7 @@ tags: ['design systems', 'select']
 original_url: 'https://medium.com/@paulmsmith/design-systems-the-means-not-the-end-fc840c21b51e'
 social_image: 'content/picnmix.jpg'
 date: 2018-10-22
+summary: Argues that design systems are a powerful starting point but still require context, process and research to deliver good services.
 ---
 
 Reusable patterns work a treat, except when they don’t.

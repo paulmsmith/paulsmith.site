@@ -6,12 +6,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {# Derive a single meta description value with sensible fallbacks #}
+    {% set _metaDescriptionSource = meta_description or summary or social_description or description %}
+    {% if _metaDescriptionSource %}
+      {% set metaDescription = _metaDescriptionSource | markdown("inline") | striptags(true) %}
+    {% endif %}
+
     <title>{{ title }} - @paulmsmith</title>
     {% block head %}
       <link href="/assets/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
       {% block linktags %}{% endblock %}
       <meta property="og:title" content="{{ title }}">
-      {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
+      {% if metaDescription %}<meta property="og:description" name="description" content="{{ metaDescription }}">{% endif %}
 
       {%- block metatags -%}
       {%- if (isDev == false) and (isHomepage) -%}
@@ -30,7 +36,7 @@
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Paul Smith">
       <meta property="og:title" content="{{ title }}">
-      <meta property="og:description" name="description" content="{{ meta_description | d(social_description) }}">
+      {% if metaDescription %}<meta property="og:description" name="description" content="{{ metaDescription }}">{% endif %}
       <meta property="og:url" content="{{ page.url }}">
       <meta property="og:url" content="https://paulsmith.site">
       {% if social_image_url %}
@@ -44,7 +50,7 @@
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="paulmsmith">
       <meta name="twitter:title" content="{{ title }}">
-      <meta name="twitter:description" content="{{ meta_description | d(social_description) }}">
+      {% if metaDescription %}<meta name="twitter:description" content="{{ metaDescription }}">{% endif %}
 
       {%- endblock -%}
       {% if feed %}

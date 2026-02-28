@@ -31,6 +31,10 @@ eleventyComputed:
       <li class="list__item">
         <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
         <a href="{{ item.url }}">{{ item.data.title }}</a>
+        {% set summary = item.data.summary or item.data.social_description or item.data.description %}
+        {% if summary %}
+          <div class="list__item-summary">{{ summary }}</div>
+        {% endif %}
       </li>
       {% endif %}
     {%- endfor -%}
@@ -52,7 +56,10 @@ eleventyComputed:
       {% if (loop.index <= entryCount.select) %}
       <li class="list__item">
         <a href="{{ item.url }}" class="list__item-link">{{ item.data.title }}</a>
-        {{ item.data.description }}
+        {% set summary = item.data.summary or item.data.description or item.data.social_description %}
+        {% if summary %}
+          <div class="list__item-summary">{{ summary }}</div>
+        {% endif %}
         <div class="list__item-datetime">
           S{{ item.data.weeknote.season }}E{{ item.data.weeknote.episode }}
         </div>

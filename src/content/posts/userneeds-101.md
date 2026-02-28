@@ -4,6 +4,7 @@ date: 2021-06-12
 tags: ['design', 'userneeds', 'research', 'select']
 social_description: 'Learn about user needs from the beginning'
 social_image: 'content/un101.jpg'
+summary: A step by step guide to understanding, writing and working with user needs in user centred service design.
 ---
 
 # {{ title }}

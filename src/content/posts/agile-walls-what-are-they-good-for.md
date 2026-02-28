@@ -6,6 +6,7 @@ tags:
   - medium
 original_url: https://medium.com/@paulmsmith/agile-walls-9313e49cbeac
 social_description: Some description here
+summary: Explores why physical agile walls act as a team's vital signs and campfire, helping communicate work and spark collaboration.
 ---
 ![A health monitoring screen showing vital signs such as heart rate and oxygen level](https://res.cloudinary.com/paulmsmith/image/fetch/c_scale,f_auto,q_auto,w_960/f_jpg/v1645979472/https://paulsmith.site/assets/images/content/vital-signs.jpg)
 

@@ -6,6 +6,7 @@ date: '2021-03-27'
 social_image: 'content/penclic-keyboard-closeup.jpeg'
 social_description: 'Have I found my perfect keyboard? A review.'
 tags: ['hardware','review']
+summary: A personal review of the Penclic KB3 mini wireless keyboard and how its ergonomics address long standing typing pain.
 ---
 
 As I write this, I have owned the [Penclic KB3 Mini Wireless Keyboard](https://penclic.se/product/mini-wireless-keyboard-kb3-black/) for a mere 2 hours but already I think this might just be the keyboard I have been searching for most of my working life.

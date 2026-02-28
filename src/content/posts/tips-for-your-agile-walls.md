@@ -2,6 +2,7 @@
 title: 'Tips for your agile walls'
 date: 2018-11-19
 tags: ['agile', 'select']
+summary: Practical tips for making agile team walls clearer, easier to maintain and genuinely owned by the whole team.
 ---
 
 If you have not yet read [Agile walls, what are they good for?](../agile-walls-what-are-they-good-for/) that might be worth your time before reading this post.
