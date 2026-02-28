@@ -1,3 +1,16 @@
 # Personal website repo
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0a38b36e-3449-42ec-80ba-06e88a87a723/deploy-status)](https://app.netlify.com/sites/psmithsite/deploys)
+This site is built with [Eleventy](https://www.11ty.dev/) and deployed to GitHub Pages.
+
+## Build locally
+
+```bash
+npm install
+npm run build
+```
+
+Generated site output is written to `public/`.
+
+## Deployment
+
+A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys the `public/` directory to GitHub Pages on pushes to `main`.

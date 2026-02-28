@@ -84,7 +84,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/images': './assets/images',
-    './src/assets/fonts': './assets/fonts'
+    './src/assets/fonts': './assets/fonts',
+    './src/.nojekyll': './.nojekyll'
   })
 
   // get netlifycms from npm and put it in the right place
