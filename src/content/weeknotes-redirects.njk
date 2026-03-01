@@ -1,0 +1,21 @@
+---
+pagination:
+  data: collections.weeknotesLegacy
+  size: 1
+  alias: week
+permalink: "weeknotes/s{{ week.data.weeknote.season | padstart(2) }}e{{ week.data.weeknote.episode | padstart(2) }}/"
+eleventyExcludeFromCollections: true
+layout: null
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url={{ week.url }}">
+    <link rel="canonical" href="{{ week.url }}">
+  </head>
+  <body>
+    <p>If you are not redirected automatically, <a href="{{ week.url }}">click here to view this weeknote</a>.</p>
+  </body>
+</html>

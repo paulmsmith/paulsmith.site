@@ -34,20 +34,15 @@ collections:
     label_singular: "Weeknote"
     folder: "src/content/weeknotes"
     create: true
-    slug: {% raw %}"s{{weeknote.season}}e{{weeknote.episode}}"{% endraw %}
-    preview_path: {% raw %}"weeknotes/{{slug}}/"{% endraw %}
+    # File slug is just the title slug (e.g. "a-brave-new-world")
+    slug: {% raw %}"{{slug}}"{% endraw %}
+    # Preview URL matches Eleventy permalink: /weeknotes/yyyy-mm-dd/title-slug/
+    preview_path: {% raw %}"/weeknotes/{{year}}-{{month}}-{{day}}/{{slug}}/"{% endraw %}
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - label: "Issue"
-        name: "weeknote"
-        widget: "object"
-        collapsed: false
-        fields:
-          - {label: "Season", name: "season", widget: "string"}
-          - {label: "Episode", name: "episode", widget: "string"}
-      - { label: "Social description", name: "social_description", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Social description", name: "social_description", widget: "text", required: false }
   - name: "writing"
     label: "Writing"
     label_singular: "Post"

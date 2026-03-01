@@ -65,6 +65,14 @@ module.exports = function (eleventyConfig) {
       .reverse()
   })
 
+  // Legacy weeknotes that have season/episode metadata (for sXXeYY redirects)
+  eleventyConfig.addCollection('weeknotesLegacy', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('./src/content/weeknotes/*.md')
+      .filter(item => item.data.weeknote && item.data.weeknote.season && item.data.weeknote.episode)
+      .reverse()
+  })
+
   eleventyConfig.addCollection('posts', function (collectionApi) {
     return collectionApi.getFilteredByGlob('./src/content/posts/*.md').reverse()
   })

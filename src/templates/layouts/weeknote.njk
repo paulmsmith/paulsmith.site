@@ -15,8 +15,5 @@
     {{ page.date | weekdate | date('cccc dd MMM') }} -
     {{ page.date | weekdate(true) | date('cccc dd MMM') }} {{ page.date | date('yyyy') }}
   </h1>
-  <p class="c-sectionhead__note">
-    <abbr title="Season {{ weeknote.season }}, Episode {{ weeknote.episode }}">S{{ weeknote.season | padstart(2) }}E{{ weeknote.episode | padstart(2) }}</abbr>
-  </p>
 </div>
 {% endblock %}
