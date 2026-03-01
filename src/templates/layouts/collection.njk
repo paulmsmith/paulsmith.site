@@ -10,9 +10,6 @@
     {%- for item in collectionItems %}
     {% if pagination.data == "collections.weeknotes" %}
       <li>
-         <div class="list__item-datetime">
-          S{{ item.data.weeknote.season }}E{{ item.data.weeknote.episode }}
-        </div>
         <a href="{{ item.url }}" class="list__item-link">
           <time datetime="{{ item.date | date }}">
             {{ item.date | weekdate | date('dd MMM') }} &ndash;
