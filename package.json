@@ -53,7 +53,7 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@toycode/markdown-it-class": "^1.2.4",
-    "accessible-autocomplete": "^2.0.3",
+    "accessible-autocomplete": "^3.0.1",
     "ansi-html": "^0.0.9",
     "chokidar-cli": "^3.0.0",
     "deepmerge": "^4.2.2",
