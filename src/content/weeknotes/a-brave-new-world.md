@@ -1,6 +1,9 @@
 ---
 title: A brave new world
 date: 2026-03-27T20:50:00.000+00:00
+social_description: A return to weeknotes prompted by the rapid mainstream
+  adoption of AI, using writing as a way to process its impact on work and
+  practice
 ---
 # The treadmill got faster
 
