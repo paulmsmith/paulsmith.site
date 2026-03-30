@@ -23,8 +23,6 @@ For that reason, I won’t be using AI to write these posts. I won’t be dictat
 
 I believe in thinking aloud, working in the open, and sharing what I learn. So here’s to a new pair of running shoes, and the excitement, fear, and fatigue that come with heading in a new direction.
 
-I’ll start by sharing a link. I’ve been a fan of Erika Flowers for a long time. She is very good at explaining complex concepts, so I was interested to see she has been thinking and writing about the impact of AI on the practice of design.
-
 ---
 
 ## Noteworthy this week
