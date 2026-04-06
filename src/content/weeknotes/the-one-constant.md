@@ -18,7 +18,7 @@ By contrast, I think about the amount of change I’ve had to absorb as a digita
 
 * I spoke with our lead clinicians about using generative AI images of medical conditions. We’re trying to understand the legal, ethical and clinical implications. We’ve struggled to find useful images, in this case mastoiditis across different ages and skin types.
 
-  ![AI generated image as an example](https://res.cloudinary.com/paulmsmith/image/upload/c_scale,f_auto,q_auto,w_960/v1775514656/ChatGPT_Image_Apr_6_2026_11_30_44_PM_l3rizv.png "This has not been clinically signed off")
+  ![AI generated image as an example](https://res.cloudinary.com/paulmsmith/image/upload/c_scale,f_auto,q_auto,w_960/v1775514996/ChatGPT_Image_Apr_6_2026_11_30_44_PM_l3rizv.png "This has not been clinically signed off")
 * We had another all-hands meeting with an update on the abolition of NHS England. It was confirmed that my directorate will not move into an arm’s-length body, so it looks like a return to the civil service.
 * We made good progress on the AI-assisted navigation prototype. I set direction, then left implementation and iteration to an interaction designer I’m mentoring. I still find it uncomfortable watching people use Figma. It often feels slower and more cumbersome than it promises.
 * I joined the [AI Ambassador Network](https://forms.office.com/pages/responsepage.aspx?id=slTDN7CF9UeyIge0jXdO491Gk4bh9fZMiT0QfImyruxUOU9PRFFNTkZLT0pCQUM4RktVOUoyMVAzSi4u&route=shorturl) call. It’s a forum for healthcare professionals to share practical uses of AI. The discussion was clinically focused but showed how quickly people are trying to understand and apply these tools.
