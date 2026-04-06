@@ -1,6 +1,10 @@
 ---
 title: The one constant
 date: 2026-04-06T23:18:00.000+01:00
+social_description: A reflection on the contrast between stable, skill-based
+  work of the past and the constant change of modern digital practice, alongside
+  a brief account of the week across work, family, and ongoing shifts in
+  technology.
 ---
 Continuing last week’s theme, I’m still reflecting on my personal and professional life.
 
