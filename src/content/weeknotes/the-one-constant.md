@@ -1,6 +1,6 @@
 ---
 title: The one constant
-date: 2026-04-06T23:18:00.000+01:00
+date: 2026-03-30T23:18:00.000+01:00
 social_description: A reflection on the contrast between stable, skill-based
   work of the past and the constant change of modern digital practice, alongside
   a brief account of the week across work, family, and ongoing shifts in
@@ -22,7 +22,7 @@ By contrast, I think about the amount of change I’ve had to absorb as a digita
 * We had another all-hands meeting with an update on the abolition of NHS England. It was confirmed that my directorate will not move into an arm’s-length body, so it looks like a return to the civil service.
 * We made good progress on the AI-assisted navigation prototype. I set direction, then left implementation and iteration to an interaction designer I’m mentoring. I still find it uncomfortable watching people use Figma. It often feels slower and more cumbersome than it promises.
 * I joined the [AI Ambassador Network](https://forms.office.com/pages/responsepage.aspx?id=slTDN7CF9UeyIge0jXdO491Gk4bh9fZMiT0QfImyruxUOU9PRFFNTkZLT0pCQUM4RktVOUoyMVAzSi4u&route=shorturl) call. It’s a forum for healthcare professionals to share practical uses of AI. The discussion was clinically focused but showed how quickly people are trying to understand and apply these tools.
-* I was prompted repeatedly by Copilot to enable new features and automation. More dialogue boxes to dismiss. Alongside the usual requests to rate Outlook or Teams, it adds up.
+* I was prompted repeatedly by Copilot to enable new features and automation. More dialogue boxes to dismiss. Alongside the usual requests to rate Outlook or Teams, it grinds my gears daily.
 
 ## Week in life
 
