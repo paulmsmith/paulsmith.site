@@ -51,7 +51,7 @@ In trying to get design systems recognised as a valuable thing to invest in (whi
 
 So with that in mind, I don’t blame design teams for believing that the patterns and associated components in a design system are some-how a ‘solved problem’ as they grab them 'off the shelf'.
 
-After-all, that is the aspiration of a design system is it not?
+After all, that is the aspiration of a design system is it not?
 
 Josh Clark wrote an excellent post on what should be the aspiration of a design system, Josh says [the most exciting design systems are ‘boring’](https://bigmedium.com/ideas/boring-design-systems.html)
 
@@ -59,7 +59,7 @@ Josh Clark wrote an excellent post on what should be the aspiration of a design 
 
 I completely agree that is the goal of a design system but I think that it also depends on the scale and variety of needs that the design system is serving.
 
-So I think it is incumbent upon the teams using a design system to fulfil their side of the deal, which I suspect we as a community have not have spelt out clearly enough, so here are some thoughts on how design systems should be used.
+So I think it is incumbent upon the teams using a design system to fulfil their side of the deal, which I suspect we as a community have not spelt out clearly enough, so here are some thoughts on how design systems should be used.
 
 ---
 
@@ -93,7 +93,7 @@ What consumers/users of a design system should know about using a design system,
 
 ### Know your problem before you look for a solution
 
-Before you trawl a design system for what you think you’ll need. Like the story of the Ikea woes of my younger days, take the time to be confident that know the problem you are trying to solve in detail so you can make a better judgement about the things on offer.
+Before you trawl a design system for what you think you’ll need. Like the story of the Ikea woes of my younger days, take the time to be confident that you know the problem you are trying to solve in detail so you can make a better judgement about the things on offer.
 
 Armed with the knowledge of the problem you are trying to solve, a Design System should make it clear what needs it meets and in what circumstances it does so which should tell you the when and why questions for a pattern.
 
@@ -138,7 +138,7 @@ Design systems are a means to an end. They should give teams a head-start in ach
 
 So before you use a pattern, **consider if the way you plan to use it (why, when, how) matches the way the design system expects it to be used.**
 
-If you do choose to use the pattern, do your own research to avoid false assurance and If find issues in your context then go one step further by taking the opportunity to make the design system better by feeding your insight back to the community.
+If you do choose to use the pattern, do your own research to avoid false assurance and if you find issues in your context then go one step further by taking the opportunity to make the design system better by feeding your insight back to the community.
 
 ---
 

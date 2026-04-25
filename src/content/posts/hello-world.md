@@ -13,7 +13,7 @@ The words 'Hello world' are often the first thing many programmers will instruct
 console.log('Hello world');
 ```
 
-Its a simple way of testing things are working, rather like flicking a light switch in a new building to check the power is on.
+It's a simple way of testing things are working, rather like flicking a light switch in a new building to check the power is on.
 
 I don't know when or where it started but it has since been appropriated by many others, including by bloggers, as the title of their first post.
 
@@ -23,7 +23,7 @@ The challenge for me now, is to prevent this being the first of four, maybe five
 
 ## Good today is better than perfect never
 
-I am forcing myself to publish this 'hello word' post and therby launch this blog sooner than I'd naturally be inclined to.
+I am forcing myself to publish this 'hello world' post and thereby launch this blog sooner than I'd naturally be inclined to.
 
 Why? Because I have a mind for continual improvement, I'm not sure my brain can recognise the state of 'done'.
 
@@ -54,7 +54,7 @@ People will never see my work if I need to be satisfied with it, I've come to ac
 
 I have a list of things I'd like to do to iterate the version I publish today, some highlights are:
 
-- Work on performance optimisation. I have not done anything specifc on this yet.
+- Work on performance optimisation. I have not done anything specific on this yet.
 - Rejig mark-up and run through more than just basic accessibility checks.
 - Generate tag archives
 - Make the reading experience better

@@ -84,7 +84,7 @@ When writing user needs, this advice from [Leisa Reichelt](https://www.disambigu
   <li>Does it help you organise and prioritise work?</li>
 </ol>
 
-More often than not I have found if a user need statement satisfies these tests it will be what what Pete Gale talks about as an 'expressed user need'.
+More often than not I have found if a user need statement satisfies these tests it will be what Pete Gale talks about as an 'expressed user need'.
 
 Meeting expressed user needs is generally what makes the difference between a service being able to deliver underlying policy intent or business objectives.
 
@@ -94,7 +94,7 @@ Meeting expressed user needs is generally what makes the difference between a se
 
 Doing research by talking to and observing users is incredibly energising, builds trust and gives your team genuine insight into what people are doing and why they are doing it.
 
-You should then be able write down what you believe are the needs of your users in the form of user need statements.
+You should then be able to write down what you believe are the needs of your users in the form of user need statements.
 
 **Now what?**
 
@@ -185,7 +185,7 @@ The measures (it's done when the user knows or can..) have some columns for narr
 
 To update the dropdown lists, you can edit the 'data' sheet. For example if you want to change the list of users to choose from. Edit the cells in column 'A'.
 
-There are lots of ways to capture research and document user needs, this just happens to one I like best. I find it easier to get my head around needs written and organised like this but whatever works for you and your team is fine.
+There are lots of ways to capture research and document user needs, this just happens to be one I like best. I find it easier to get my head around needs written and organised like this but whatever works for you and your team is fine.
 
 I've seen [Trello](https://trello.com) boards which roughly follow this structure, each card is a need in a column and that allows comments on each need and the ability to attach links and documents.
 

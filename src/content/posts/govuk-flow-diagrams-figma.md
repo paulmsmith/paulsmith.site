@@ -100,7 +100,7 @@ I've ported the flow diagram assets into Figma and then made use of features suc
 
 ### Add visuals for other touch points in the flow
 
-I've seen [versions of the the flow diagram](https://dfedigital.blog.gov.uk/2022/12/14/improve-public-service/) where the designer has wanted to indicate something outside the digital interaction such as:
+I've seen [versions of the flow diagram](https://dfedigital.blog.gov.uk/2022/12/14/improve-public-service/) where the designer has wanted to indicate something outside the digital interaction such as:
 
 - Waiting for something
 - Sending or receiving an email
@@ -122,7 +122,7 @@ This leads to very long and hard to follow diagrams. Writing as somebody who has
 
 Using Figma's prototyping tools. You can create flows showing different levels of detail by drawing them on different frames and then linking them together.
 
-See the video here. A frame showing the high level flow contains visual representing a stack of pages, known as a 'compressed flow'.
+See the video here. A frame showing the high level flow contains a visual representing a stack of pages, known as a 'compressed flow'.
 
 This should tell the viewer that there are steps being summarised at that point which can be explored by clicking to drill down further.
 
@@ -132,7 +132,7 @@ This should tell the viewer that there are steps being summarised at that point 
   url: 'content/figma-demo-3.mp4'
 } %}
 
-This gives impression of zooming in when following the flow diagram and means you should be able to more easily manage changes to the flow by compartmentalising sections of it and then linking them together.
+This gives the impression of zooming in when following the flow diagram and means you should be able to more easily manage changes to the flow by compartmentalising sections of it and then linking them together.
 
 ---
 

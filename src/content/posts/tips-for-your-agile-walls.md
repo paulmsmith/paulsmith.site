@@ -19,11 +19,11 @@ Don’t overcomplicate your wall, take some time to design it upfront which is u
 I sketch a rough layout of any wall I want to create prior to getting out the postIt notes and Blutack. This might seem like overkill but it is the work that enables good work. It will help you make the best use of space.
 
 ## Make them easy
-If a team is combining a physical wall with digitals tools (like Trello, Notion, Jira, etc), then that could be why the information you’d expect to see is not visible on the physical walls.
+If a team is combining a physical wall with digital tools (like Trello, Notion, Jira, etc), then that could be why the information you’d expect to see is not visible on the physical walls.
 
 If it becomes too much effort to maintain the physical walls then I’d say they are being over utilised.
 
-To make them easier for people (and better for for a wider audience) my advice is to use the walls to display higher level information that answers the above questions. Put the detail into digital tools.
+To make them easier for people (and better for a wider audience) my advice is to use the walls to display higher level information that answers the above questions. Put the detail into digital tools.
 
 ## Don’t break the magic string
 
@@ -32,7 +32,7 @@ Rather than a live feed, I try to make the physical wall is more like the highli
 
 That way it is less arduous to maintain parity between the physical and the digital. The information on a physical wall should be a little more permanent and necessitate less frequent change.
 
-This helps people working remote, they can update the physical wall whey they are present or ask for less changes from a colleague who is.
+This helps people working remote, they can update the physical wall when they are present or ask for less changes from a colleague who is.
 
 Arun Zachariah, an excellent agile coach I worked with on a government service, had a great expression, he’d say to the team:
 

@@ -20,7 +20,7 @@ The following are some thoughts about why Agile Walls can be really valuable and
 
 Walking around a team’s work area is usually a good way to establish the status of a team and the work they’re doing.
 
-Browsing a team’s wall-space should give you key information about the situation at hand in much the same way that a patient-chart and health monitor at the end the bed, can give a doctor or passer by the key information they need while a patient is sleeping.
+Browsing a team’s wall-space should give you key information about the situation at hand in much the same way that a patient-chart and health monitor at the end of the bed, can give a doctor or passer by the key information they need while a patient is sleeping.
 
 The vital signs for an agile delivery team might be:
 
@@ -41,7 +41,7 @@ If you can’t answer those questions from a team’s physical space then I’d 
 
 {% imgr {
     imagePath: 'content/wall-photo.jpg',
-    alt: 'A physical wall with agile cards neatly aligned. Printed lables for sprint goals, backlog, doing, done and ready',
+    alt: 'A physical wall with agile cards neatly aligned. Printed labels for sprint goals, backlog, doing, done and ready',
     classes: 'u-1/1'
   }
 %}

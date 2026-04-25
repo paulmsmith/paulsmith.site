@@ -14,7 +14,7 @@ At the time of writing (September 2019) we are moving from a broad discovery pha
 
 This is the time we try out different solutions to the problems we learnt about during discovery.
 
-This where prototypes come in, they help us to learn by doing.
+This is where prototypes come in, they help us to learn by doing.
 
 ## What is a prototype?
 
@@ -120,7 +120,7 @@ We took photographs of the sheets and then used a tool called [Invision](https:/
 
 Pen and paper works well when you are in the same room but we are a distributed team.
 
-The other drawback to prototyping on paper is that it eventually it does take longer. A mistake means redrawing a whole page or using fiddly bits of paper and glue which is fun but time consuming.
+The other drawback to prototyping on paper is that it eventually does take longer. A mistake means redrawing a whole page or using fiddly bits of paper and glue which is fun but time consuming.
 
 Once sketches are finished it then takes time to ‘stitch’ them together in Invision so we decided to try Balsamiq Cloud as our low fidelity prototyping tool to enable faster remote collaboration.
 
@@ -150,7 +150,7 @@ We have learned a lot and have been able to validate some of our ideas, and disc
 
 I am very pleased other members of the team (not just myself as official designer) have used Balsamiq to update prototypes.
 
-They have learnt new skills and there is not such a dependancy on the person with ‘designer’ in their job title. After all, design and user research is a team sport!
+They have learnt new skills and there is not such a dependency on the person with ‘designer’ in their job title. After all, design and user research is a team sport!
 
 ## What next?
 

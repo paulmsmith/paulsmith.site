@@ -20,7 +20,7 @@ As I write this, I have owned the [Penclic KB3 Mini Wireless Keyboard](https://p
 
 ## Keyboards and me
 
-Since becoming an Apple user (around Mac OS9 in 1998) I have always used Apple perhipherals.
+Since becoming an Apple user (around Mac OS9 in 1998) I have always used Apple peripherals.
 
 Why? Because they looked cool and matched the design of whatever new machine you were soon to be placing proudly on your desk.
 
@@ -42,7 +42,7 @@ I was reaching for what I wanted, instead of what I really needed and then havin
 
 Which usually meant pain in my elbows, wrists and hands.
 
-I'd have minor flare-ups blame something else, like moving a heavy piece of furnature or jet washing the garden and then continue my old ways when the pain subsided.
+I'd have minor flare-ups blame something else, like moving a heavy piece of furniture or jet washing the garden and then continue my old ways when the pain subsided.
 
 So approaching 40 years of age I've finally been in enough pain to make me do something about it.
 
@@ -50,7 +50,7 @@ So approaching 40 years of age I've finally been in enough pain to make me do so
 
 ## My dream keyboard
 
-Having belatedly realised I should consider more carefully the tools and perhipherals that I use each day for hours at a time.
+Having belatedly realised I should consider more carefully the tools and peripherals that I use each day for hours at a time.
 
 I noted down all the things I liked and disliked about my existing [Apple Magic Keyboard](https://www.apple.com/uk/shop/product/MRMH2B/A/magic-keyboard-with-numeric-keypad-british-english-space-grey) and used that to document what I needed (and wanted) my perfect keyboard to satisfy:
 
@@ -64,7 +64,7 @@ I noted down all the things I liked and disliked about my existing [Apple Magic 
   I want to hear the keys being pressed but for them to not be too annoyingly loud. If I'm tired it would irritate me and I'm quite sure it would annoy colleagues in the room (or on video calls)
 
 - ### Tactile keypress with more "key travel"
-  The distance a key moves when pressed should be more than an Apple Magic keyboard but not too much because that risks repetative strain injury.
+  The distance a key moves when pressed should be more than an Apple Magic keyboard but not too much because that risks repetitive strain injury.
 
 - ### "Tenkeyless" layout
   Also known as "TKL", this means there is no number pad on the right hand side which prevents my right hand from over extending to reach my mouse or trackpad
@@ -86,7 +86,7 @@ This was incredibly useful, because it narrowed my search from the beginning.
 
 It has made me realise how often I should have done this with other purchases in the past.
 
-Instead I have typically starting with the most broad of search term, in this case it might have been 'Mac keyboard'.
+Instead I have typically started with the most broad of search term, in this case it might have been 'Mac keyboard'.
 
 Only for a history of getting bogged down and bored to repeat itself as I try to wade my way through the endless list of options.
 
