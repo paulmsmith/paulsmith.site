@@ -3,7 +3,7 @@
   $font-file,
   $font-weight: normal,
   $font-style: false,
-  $font-display: swap
+  $font-display: fallback
 ) {
   @font-face {
     font-family: $font-family;
