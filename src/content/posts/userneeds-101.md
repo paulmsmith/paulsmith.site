@@ -36,7 +36,7 @@ I encourage you to read them all (and in the order provided) to help you underst
     <p>First read <a href="https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs#understanding-user-needs">Learning about users and their needs</a> &ndash; from the UK government service manual. It gives a brief introduction to what user needs are and why you should seek to satisfy user needs in the design of your service or product.</p>
   </li>
   <li>
-    <p>Next see Ben Holliday's approach to <a href="https://www.hollidazed.co.uk/2017/07/14/leading-service-design-user-needs/">understanding different types of user need</a> &ndash; this should give you a more rounded view of what they are.</p>
+    <p>Next see Ben Holliday's approach to <a href="https://benholliday.com/2017/07/14/leading-service-design-user-needs/">understanding different types of user need</a> &ndash; this should give you a more rounded view of what they are.</p>
     <p>This is important because as Ben says, user research should be used to understand real life stages and context, not only the needs that IT projects or existing products create.</p>
   </li>
   <li>
