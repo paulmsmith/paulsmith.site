@@ -51,7 +51,7 @@
     "@11ty/eleventy-upgrade-help": "^3.0.1",
     "@allmarkedup/nunjucks-with": "^0.1.2",
     "@rollup/plugin-commonjs": "^29.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@toycode/markdown-it-class": "^1.2.4",
     "accessible-autocomplete": "^3.0.1",
     "ansi-html": "^0.0.9",
