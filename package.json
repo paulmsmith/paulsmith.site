@@ -57,7 +57,7 @@
     "ansi-html": "^0.0.9",
     "chokidar-cli": "^3.0.0",
     "deepmerge": "^4.2.2",
-    "dotenv": "^16.0.0",
+    "dotenv": "^17.4.2",
     "html-minifier": "^4.0.0",
     "http-server": "^14.0.0",
     "javascript-stringify": "^2.1.0",
