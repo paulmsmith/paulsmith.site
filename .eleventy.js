@@ -41,7 +41,8 @@ module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'))
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'))
+  const eleventyPluginRss = require('@11ty/eleventy-plugin-rss')
+  eleventyConfig.addPlugin(eleventyPluginRss.rssPlugin || eleventyPluginRss.default || eleventyPluginRss)
 
 
   // Filters
