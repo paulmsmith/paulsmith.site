@@ -93,12 +93,6 @@ module.exports = function (eleventyConfig) {
     './src/.nojekyll': './.nojekyll'
   })
 
-  // get netlifycms from npm and put it in the right place
-  eleventyConfig.addPassthroughCopy({
-    './node_modules/netlify-cms/dist/netlify-cms.js':
-      './assets/javascripts/netlify-cms.js'
-  })
-
   eleventyConfig.addWatchTarget('./src/assets/')
   eleventyConfig.addWatchTarget('./src/assets/stylesheets/')
   eleventyConfig.addWatchTarget('./src/templates/components/')
