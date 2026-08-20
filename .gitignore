@@ -105,3 +105,6 @@ dist
 public/
 
 .DS_Store
+
+# JetBrains IDE
+.idea/
