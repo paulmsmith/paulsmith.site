@@ -2,6 +2,7 @@
 {% block main %}
 
   <h1 class="heading-title heading-title--separated">{{ title }}</h1>
+  {% if feed %}<p>Notes on work and life. <a href="{{ feed.url }}">Subscribe to the weeknotes feed</a>.</p>{% endif %}
   {% if pagination.pageNumber > 0 %}
     <p>Page {{ pagination.pageNumber + 1 }}</p>
   {% endif %}
@@ -11,11 +12,12 @@
     {% if pagination.data == "collections.weeknotes" %}
       <li>
         <a href="{{ item.url }}" class="list__item-link">
+          {{ item.data.title }}
+        </a>
           <time datetime="{{ item.date | date }}">
             {{ item.date | weekdate | date('dd MMM') }} &ndash;
             {{ item.date | weekdate(true) | date('dd MMM') }} {{ item.date | date('yyyy') }}
           </time>
-        </a>
         {% set summary = item.data.summary or item.data.description or item.data.social_description %}
         {% if summary %}
           <p class="list__item-summary">{{ summary }}</p>

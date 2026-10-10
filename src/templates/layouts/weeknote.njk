@@ -8,12 +8,9 @@
 
 {% block section_head %}
 <div class="c-sectionhead c-sectionhead--weeknote">
-  <h1 class="c-sectionhead__heading-1">
-    <div class="c-sectionhead__strapline">
-       Weeknotes <span aria-hidden="true">&nbsp;
-    </div>
-    {{ page.date | weekdate | date('cccc dd MMM') }} -
-    {{ page.date | weekdate(true) | date('cccc dd MMM') }} {{ page.date | date('yyyy') }}
-  </h1>
+  <p class="c-sectionhead__strapline">Weeknotes</p>
+  <h1 class="c-sectionhead__heading-1">{{ title }}</h1>
+  <p>{{ page.date | weekdate | date('cccc dd MMM') }} -
+    {{ page.date | weekdate(true) | date('cccc dd MMM') }} {{ page.date | date('yyyy') }}</p>
 </div>
 {% endblock %}

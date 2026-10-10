@@ -5,8 +5,6 @@ social_description: A return to weeknotes prompted by the rapid mainstream
   adoption of AI, using writing as a way to process its impact on work and
   practice
 ---
-# The treadmill got faster
-
 In the time it’s taken me to get my act together, update this site, and start weeknoting again, everything has accelerated.
 
 I often describe working in digital as running on a treadmill. You have to keep pace, because if you slow down or stand still, you fall off.

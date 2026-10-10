@@ -66,6 +66,14 @@ module.exports = function (eleventyConfig) {
       .reverse()
   })
 
+  // Homepage highlights omit notes explicitly kept only in the archive.
+  eleventyConfig.addCollection('homepageWeeknotes', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('./src/content/weeknotes/*.md')
+      .filter(item => !item.data.excludeFromHomepage)
+      .reverse()
+  })
+
   // Legacy weeknotes that have season/episode metadata (for sXXeYY redirects)
   eleventyConfig.addCollection('weeknotesLegacy', function (collectionApi) {
     return collectionApi
