@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Paul Smith, interaction designer"
 permalink: index.html
 description: "The personal website of Paul Smith, Lead Interaction Designer at NHS England"
 entryCount:
@@ -14,35 +14,12 @@ eleventyComputed:
 {% block main %}
 
   <section class="prose">
-    <p>Lead Interaction Designer at <acronym title="National Health Service England">NHS England</acronym> within Digital Urgent and Emergency Care. <a href="/about/" class="link link--onward">About Paul</a></p>
+    <h1 class="heading-title">Hello, I’m Paul.</h1>
+    <p>I’m a lead interaction designer at NHS England, based near Manchester. I work on digital services that help people find the care they need.</p>
+    <p>I use research, design and code to explore problems and test ideas. My current work includes AI-assisted navigation, alongside mentoring designers and contributing to shared NHS design tools.</p>
+    <p>I write about what I’m learning at work and what’s happening in life. <a href="/about/" class="link link--onward">More about me</a></p>
   </section>
   <!-- / .prose -->
-
-  <hr class="section-break section-break--s">
-
-  <section class="prose">
-    <h2 class="heading-title heading-title--separated" id="select-articles">Select articles</h2>
-  </section>
-  <!-- / .prose -->
-
-  <ul class="list list--entries list--spaced">
-    {%- for item in collections.select.reverse() -%}
-      {% if (loop.index <= entryCount.select) %}
-      <li class="list__item">
-        <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
-        <a href="{{ item.url }}">{{ item.data.title }}</a>
-        {% set summary = item.data.summary or item.data.social_description or item.data.description %}
-        {% if summary %}
-          <div class="list__item-summary">{{ summary }}</div>
-        {% endif %}
-      </li>
-      {% endif %}
-    {%- endfor -%}
-  </ul>
-
-  <div class="prose">
-    <p><a href="/writing" class="link link--onward">All articles</a></p>
-  </div>
 
   <hr class="section-break section-break--s">
 
@@ -52,8 +29,8 @@ eleventyComputed:
   <!-- / .prose -->
 
   <ul class="list list--entries list--spaced">
-    {%- for item in collections.weeknotes -%}
-      {% if (loop.index <= entryCount.select) %}
+    {%- for item in collections.homepageWeeknotes -%}
+      {% if (loop.index <= entryCount.weeknotes) %}
       <li class="list__item">
         <div class="list__item-datetime">
           <time datetime="{{ item.date | date }}">
@@ -74,5 +51,31 @@ eleventyComputed:
   <div class="prose">
     <p><a href="/weeknotes" class="link link--onward">All weeknotes</a></p>
   </div>
+  <hr class="section-break section-break--s">
+
+  <section class="prose">
+    <h2 class="heading-title heading-title--separated" id="select-articles">Selected articles</h2>
+  </section>
+  <!-- / .prose -->
+
+  <ul class="list list--entries list--spaced">
+    {%- for item in collections.select | reverse -%}
+      {% if (loop.index <= entryCount.select) %}
+      <li class="list__item">
+        <time datetime="{{ item.date | date }}" class="list__item-datetime">{{ item.date | date("d LLLL y") }}</time>
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+        {% set summary = item.data.summary or item.data.social_description or item.data.description %}
+        {% if summary %}
+          <div class="list__item-summary">{{ summary }}</div>
+        {% endif %}
+      </li>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
+
+  <div class="prose">
+    <p><a href="/writing" class="link link--onward">All articles</a></p>
+  </div>
+
 
 {% endblock %}
